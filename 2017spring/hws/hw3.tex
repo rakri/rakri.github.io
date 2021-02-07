@@ -1,0 +1,127 @@
+\documentclass[solution,addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newenvironment{Solution}{\begin{EnvFullwidth}\begin{solution}}{\end{solution}\end{EnvFullwidth}}
+
+\printanswers
+%\unframedsolutions
+\pagestyle{headandfoot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% INSTRUCTIONS %%%%%%%%%%%%%%%%%%%%%
+% * Fill in your name and roll number below
+
+% * Answer in place (after each question)
+
+% * Use \begin{solution} and \end{solution} to typeset
+%   your answers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fill in the details below
+\def\studentName{\textbf{TODO: Name}}
+\def\studentRoll{\textbf{TODO: Roll}}
+
+\firstpageheader{CS 6841 - Assignment 3}{}{\studentName, \studentRoll}
+\firstpageheadrule
+
+\newcommand{\brac}[1]{\left[ #1 \right]}
+\newcommand{\curly}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\card}[1]{\left\lvert #1 \right\rvert}
+
+\newcommand{\prob}{\operatorname{\mathbf{Pr}}}
+\newcommand{\ex}{\operatorname{\mathbf{E}}}
+\newcommand{\from}{\leftarrow}
+
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\reals}{\mathbb{R}}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\hashFamily}{\mathcal{H}}
+
+\newcommand{\Yes}{\texttt{Yes}}
+\newcommand{\No}{\texttt{No}}
+
+\begin{document}
+
+\begin{questions}
+
+
+\question[40] \textbf{(Fun with Metrics)}  
+In this exercise, you will learn how to use metric embeddings to design algorithms.
+\begin{parts}
+\part[10] Show how to solve the $k$-median problem on line metrics optimally. That is, given $n$ clients $C$ and $m$ choices for placing the centers $F$, and a line metric $d_L$ on $C \cup F$, find a subset $S \subseteq F$ such that $|S| = k$ and the $cost(C,S)$ is minimized. Recall that $cost(C,S) = \sum_{j \in C} d_L(j,S)$, and $d_L(j,S) = \min_{i \in S} d_L(j,i)$.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\part[10] Now assume the following (fake) theorem:
+\begin{theorem} \label{thm:fake1}
+Given any metric $(X,d)$ where $X$ is a set of $n$ points, and $d(\cdot)$ is a general metric distance function, we can  efficiently find an embedding into a line metric $d_L$ such that for all $u \neq v$, $d(u,v) \leq d_L(u,v) \leq O(\log n) d(u,v)$.
+\end{theorem}
+ Using the fake theorem above, devise a $O(\log n)$-approximation to $k$-median on general metrics. (Hint: consider the modified instance ${\cal I}' = (C \cup F, d_L)$ and solve $k$-median on $d_L$, and output the same solution for the original instance.)
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\part[10] In reality the fake theorem is not true as stated above. What is true is the following theorem:
+\begin{theorem}
+Given any metric $(X,d)$ where $X$ is a set of $n$ points, and $d(\cdot)$ is a distance function, we can  efficiently find an embedding into a distribution ${\cal D}$ over different line metrics $d_{L_1}, d_{L_2}, \ldots, d_{L_k}$ such that for all $u \neq v$, $d(u,v) \leq \mathbb{E}_{d_L \sim {\cal D}} \left[ d_L(u,v) \right] \leq O(\log n) d(u,v)$.
+\end{theorem}
+Now, can you extend the same reasoning to devise good approximation algorithms for $k$-median? If not, what hurdles do you face? For a hint, see the part below.
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\part[10] What happens if you further assume in the theorem (in reality this assumption is not valid, but let us just assume it for the sake of this question) that for all line metrics $d_{L_i}$ in the support of ${\cal D}$ and all $u \neq v$, we have $d_{L_i}(u,v) \geq d(u,v)$, and $\mathbb{E}_{d_L \sim {\cal D}} \left[ d_L(u,v) \right] \leq O(\log n) d(u,v)$. Such embeddings are called embeddings into a distribution of \textbf{dominating lines} (for any pair $u \neq v$, the embedding function \emph{always increases} the distances, but \emph{on expectation}, does not increase by more than a $O(\log n)$ factor). Now does it help you devise approximation algorithms?
+
+\end{parts}
+
+\question[40] \textbf{(Algorithms for Warehouse Placement)}  
+We now look at a modification of the $k$-median problem, which we call warehouse placement. Here, we're given a metric space with $n$ retail outlets (or clients) denoted by set $C$, and $m$ possible locations $F$, and a metric $d$ over $C \cup F$. We want to place $k$ warehouses at a subset $S \subseteq F$ such that $\max_{j \in C} d(j,S)$ is minimized. Notice that if the $\max$ is replaced by $\sum$, then we will get back the $k$-median problem.
+\begin{parts}
+\part[10] Show that the problem does not admit any $(3-\epsilon)$-approximation algorithm if $P \neq NP$ (Hint: reduce from Max-$k$-Coverage).
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+Now analyze the following algorithm for this problem: suppose somehow we know the value of the optimal solution $C^*$. Then, build a graph over the clients $C$ with the following edges: place an edge between $j_1 \in C$ and $j_2 \in C$ if and only if $d(j_1, j_2) \leq 2C^*$.
+\part[10] Show that the size of any maximal independent set in this graph is at most $k$.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[10] Show how to use some maximal independent set found to recover a set $S \subseteq F$ of $k$ locations with a good approximation ratio for the original problem. What's the best approximation factor you can get?
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[10] Show how to dispense the assumption of knowing $C^*$ by trying all distance values and enumerating.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\end{parts}
+
+
+\end{questions}
+\end{document} 

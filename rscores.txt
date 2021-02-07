@@ -1,0 +1,32 @@
+ADAMS, JONATHAN KHAMRON  |jkadams  | 10 | 10 | 10  | 9   |  10  |37.5 | 50   |  63   |  56   |   54  |
+BARSHAY, NATHANIEL P.    |nbarshay | 10 | 10 | 10  | 6.5 |  0   |38   | 50   |  50   |  57   |   56  |
+BASEHORE, DEREK JAMES    |dbasehor | 10 | 10 | 8   | 6   |  0   |40   | 36   |  35   |  37   |   31  |
+BESSE, DREW THOMAS       |dbesse   | 0  | 10 | 10  | 0   |  5   |40   | 47   |  58.5 |  53   |   41  |
+CHEEK, ERIC A.           |echeek   | 10 | 9 | 10   | 8   |  10  |35.5 | 49   |  65   |  55   |   53  |
+CHERNYAK, DMITRIY        |dchernya | 10 | 10 | 9   | 9.5 |  10  |40   | TBD  |  51   |  60   |   56  |
+DITZLER, FRANKLIN G.     |fgd      | 10 | 10 | 10  | 4   |  8   |39   | 44.5 |  62   |  56   |   37  |
+FERRIS, JOHN H.          |jhferris | 10 | 8 | 9    | 4   |  5   |34   | 39   |  50   |  57   |   Ab  |
+GOYAL, ANKUR             |ankurg1  | 10 | 10 | 10  | 8   |  10  |38   | 46   |  54   |  59   |   47  |
+HARPER, NICHOLAS ANDREW  |nharper  | 0  | 10 | 10  | 5   |  0   |39   | 44.5 |  25   |  37   |   Ab  |
+HU, HANZHANG             |hanzhang | 10 | 10 | 9   | 10  |  10  |31.5 | 50   |  62.5 |  56   |   42  |
+LEWI, KEVIN KAI-HSIANG   |klewi    | 10 | 10 | 10  | 6   |  10  |38   | 49   |  63.5 |  55   |   TBD |
+LI, PENGFEI              |pengfeil | 10 | 9 | 10   | 6   |  6   |35   | 47   |  52.5 |  47   |   43  |
+LOH, JONATHAN W          |jwloh    | 10 | 4 | 10   | 5   |  9   |37   | 47   |  59   |  53   |   60  |
+LU, RAYMOND LI           |rllu     | 10 | 6.5 | 9  | 3   |  5   |34   | 50   |  54   |  60   |   46  |
+MILLER, CARLA REID       |crmiller | 10 | 10 | 0   | 3   |  0   |38.5 | 40.5 |  47   |  38   |   35  |
+MIRMAN, MATTHEW B.       |mmirman  | 9 | 7 | 10    | 3   |  0   |35.5 | 44.5 |  48.5 |  40   |   Ab  |
+NG, WILLIAM J.           |wjn1     | 10 | 10 | 9   | 10  |  9   |40   | 50   |  63.5 |  57   |   Ab  |
+SEGALL, BENJAMIN BEYER   |bsegall  | 10 | 10 | 10  |  6  |  4   |32   | 48.5 |  61   |  31   |   39  |
+SNOOK, AARON BUTLER      |asnook   | 10 | 10 | 10  |  5  |  7   |34   | 46   |  65   |  54   |   55  |
+SNYDER, NATHANIEL PRESTON|npsnyder | 10 | 10 | 9   |  4  |  10  |39   | 44.5 |  42.5 |  42   |   Ab  |
+STERLING, DOUGLAS DOW    |dsterlin | 10 | 8 | 10   |  7  |  9   |35   | 50   |  49   |  58   |   45  |
+SULLIVAN, MICHAEL JOHN   |mjsulliv | 10 | 10 | 6   |  3  |  4   |37   | 43.5 |  70   |  55   |   Ab  |
+TAWA, STEPHEN J          |stawa    | 10 | 10 | 9.5 |  7  |  10  |37   | 50   |  66.5 |  58   |   58  |
+TREJO, ADRIAN            |atrejo   | 10 | 7 | 7    |  7  |  7   |35   | 38   |  61   |  33   |   26  |
+WANG, ANLU               |anluw    | 10 | 10 | 10  |  0  |  10  |40   | 45   |  54   |  60   |   52  |
+WILSON, TIMOTHY JAMES    |tjwilson | 10 | 10 | 10  | 9.5 |  4   |34   | 50   |  51   |  54   |   54  |
+ZHOU, LIDONG             |lidongz  | 10 | 10 | 9   | 5   |  10  |36   | 45   |  0    |  53   |   48  |
+ZHOU, RICKY              |rickyz   | 10 | 10 | 10  | 6   |  10  |37.5 | 47.5 |  64   |  60   |   52  |
+EDELSTEIN, DAVID         |dedelste | 10 | 10 | 10  | 4   |  5   |38   | 30   |  11   |  51   |   30  |
+MU, MIKE                 |machongm | 10 | 10 | 10  | 4   |  3   |38   | 30   |  66   |  59   |   Ab  |
+TEH, MING HUA            |ravishan | 10 | 10 | 10  | 5   |  9   |39   | 50   |  64   |  55   |   60  |

@@ -1,0 +1,121 @@
+\documentclass[solution,addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newenvironment{Solution}{\begin{EnvFullwidth}\begin{solution}}{\end{solution}\end{EnvFullwidth}}
+
+\printanswers
+%\unframedsolutions
+\pagestyle{headandfoot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% INSTRUCTIONS %%%%%%%%%%%%%%%%%%%%%
+% * Fill in your name and roll number below
+
+% * Answer in place (after each question)
+
+% * Use \begin{solution} and \end{solution} to typeset
+%   your answers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fill in the details below
+\def\studentName{\textbf{TODO: Name}}
+\def\studentRoll{\textbf{TODO: Roll}}
+
+\firstpageheader{CS 6841 - Assignment 5}{}{\studentName, \studentRoll}
+\firstpageheadrule
+
+\newcommand{\brac}[1]{\left[ #1 \right]}
+\newcommand{\curly}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\card}[1]{\left\lvert #1 \right\rvert}
+
+\newcommand{\prob}{\operatorname{\mathbf{Pr}}}
+\newcommand{\ex}{\operatorname{\mathbf{E}}}
+\newcommand{\from}{\leftarrow}
+
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\integers}{\mathbb{Z}}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\hashFamily}{\mathcal{H}}
+
+\newcommand{\Yes}{\texttt{Yes}}
+\newcommand{\No}{\texttt{No}}
+
+\begin{document}
+
+\begin{questions}
+
+\question[25] \textbf{(Probabilistic Method)}  Probabilistic method refers to the technique of proving the existence of an object by constructing a random process underwhich the desired object is output with non-zero probability.  This may sound like a very roundabout way of proving things, but is really a more analytics version of the Piegeon-Hole principle.
+
+In this exercise, we prove the existence of expander graphs as used in the AKS sorting networks.  We work with bipartite graphs $G = (L, R, E)$ where $L$ and $R$ are the left and right sets of vertices, satisfying $\card{L} = \card{R} = n$; and $E \subseteq L \times R$ is the set of edges between $L$ and $R$.   Such a graph is said to be $\epsilon$-left-expanding if for every set $S \subseteq L$ satisfying $\card{S} \ge \epsilon \card{L}$,
+
+\newcommand{\nbor}{\mathcal{N}}
+\[ \card{\nbor(S) := \curly{ r \in R \mid \exists l \in S: (l, r) \in E }} \ge (1 - \epsilon) \card{R}. \]
+
+Our random process picks $d$ random perfect matchings and sets $E$ to be the union of these perfect matchings.
+
+\begin{parts}
+
+\part[2]  Prove that the random process outputs a graph where each vertex has degree at most $d$.
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[10]  Let us fix a set $S \subseteq L$ satisfying $\card{S} \ge \epsilon \card{L}$, and a set $T \subset R$ satisfying $\card{T} < (1 - \epsilon) \card{R}$.   Show that the probability that $\nbor(S) \subseteq T$ is at most $(1 - \epsilon)^{\epsilon n d}$.
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[10]  Above, we have shown that there is no fixed $S, T$ that is a counter-example to the $\epsilon$-left-expanding property of our random graph.  To complete the argument, we simply take union bound over all sets $S, T$.  Show that for $d$ large enough in terms of $\epsilon$ (but independent of $n$), part (b) holds for every set $S, T$ satisfying the size constraints with probability at least $1 - \exp(-n)$.  This proves that the output of the random process is an expander with probability exponentially close to $1$.
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[3]  Define $\epsilon$-right-expanding similarily (but with left and right transposed) and further call $G$ $\epsilon$-expanding if it is both left and right expanding.  What is the probabilty that a graph $G$ output from the above process is $\epsilon$-expanding?
+
+\end{parts}
+
+
+
+\question[20] \textbf{(Different Graph Sparsifier)}  In class, you saw one kind of graph sparsifiers, called \emph{spectral sparsifiers}. In this homework, you'll design another kind which approximately preserves pairwise distances in a graph while retaining very few edges. In the following, let $G = (V,E)$ denote a undirected, unweighted graph on $n$ vertices and $m$ edges where $m$ is large, say $\Omega(n^2)$.
+\begin{parts}
+
+\part[10]  Construct a subgraph $H$ in the following manner: randomly sample each vertex $v$ as a ``hub'' with probability $p$ (i.e., add $v$ to $S$ w.p $p$). Then construct a subgraph $H_v$ which preserves shortest paths to all other vertices from $v$. Using $\cup_{v \in S} H_v$ as a backbone (of course, we may need to add other edges to $H_v$), construct $H$ so that all distances are preserved up to an additive $2$. (Hint: break up the graph into high and low degree vertices depending on $p$, and try to use the fact that high-degree vertices are likely to be neighboring sampled hubs.) Optimize for $p$ so that the number of edges in $H$ is at most $O(n^{1.5} {\rm polylog}(n))$.
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[10]  Suppose the graph $H$ we construct need not be a subgraph of $G$ (i.e., we can introduce new vertices), and moreover, is allowed to have weights (non-negative) on edges. Show that by adapting the above solution to reach hubs from both end points, we can bring down size of $H$ to $O(n^{4/3} {\rm polylog}(n))$ edges but now all distances are only preserved upto additive $4$.(Hint: now you can easily preserve distances between hubs by just adding a complete graph with the shortest path distances as the weights.)
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\end{parts}
+
+
+\end{questions}
+
+
+\end{document} 

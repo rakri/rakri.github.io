@@ -1,0 +1,147 @@
+\documentclass[solution,addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newenvironment{Solution}{\begin{EnvFullwidth}\begin{solution}}{\end{solution}\end{EnvFullwidth}}
+
+\printanswers
+%\unframedsolutions
+\pagestyle{headandfoot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% INSTRUCTIONS %%%%%%%%%%%%%%%%%%%%%
+% * Fill in your name and roll number below
+
+% * Answer in place (after each question)
+
+% * Use \begin{solution} and \end{solution} to typeset
+%   your answers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fill in the details below
+\def\studentName{\textbf{TODO: Name}}
+\def\studentRoll{\textbf{TODO: Roll}}
+
+\firstpageheader{CS 6841 - Assignment 3}{}{\studentName, \studentRoll}
+\firstpageheadrule
+
+\newcommand{\brac}[1]{\left[ #1 \right]}
+\newcommand{\curly}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\card}[1]{\left\lvert #1 \right\rvert}
+
+\newcommand{\prob}{\operatorname{\mathbf{Pr}}}
+\newcommand{\ex}{\operatorname{\mathbf{E}}}
+\newcommand{\from}{\leftarrow}
+
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\reals}{\mathbb{R}}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\hashFamily}{\mathcal{H}}
+
+\newcommand{\Yes}{\texttt{Yes}}
+\newcommand{\No}{\texttt{No}}
+
+\begin{document}
+
+\begin{questions}
+
+\question[70] \textbf{(How long to lease, before you buy)} In this problem, we explore the primal-dual method for designing online algorithms. In the problem set-up, we just moved into a city and plan to stay there till the end of a project we are working on. The problem is, we don't know how long the project will last. So when you're getting a modem for the internet at home, the company gives us two choices: (a) rent the modem at $1$ rupee per day, or (b) buy it for a fixed cost of $B$ rupees.
+\begin{parts}
+\part[2] If we knew the number of days we're going to stay, what is the optimal thing to do to minimize our cost?
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[5] Since we don't know the number of days until the project is over, can we devise a good algorithm with small competitive ratio, i.e., ratio of our cost to the optimal cost for the given input? For example, one such policy will be to lease for a certain number of days, and then buy the modem. What's the best choice of how many days to lease, to achieve a competitive ratio of $2$.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[5] Show that no deterministic algorithm can do better than $2$-competitive.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[10] Now we show that we can do better with randomized algorithms. For this, consider the following algorithm: keep leasing for the first $3B/4$ days. Then with probability $0.5$, buy the modem on day $3B/4$. With the remaining probability, continue leasing until day $B$. At this point, if we haven't already bought it, buy the modem. Show that the competitive ratio (which is maximum over all $T$ of the expected cost of the algorithm if we lived in the city for $T$ days divided by optimal cost for the same $T$ days) is better than $2$.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[3] We now devise a primal-dual based online algorithm to determine the optimal probabilities of when to buy and when to lease. To this end, consider the following LP relaxation of the problem. $\min ( \sum_{1 \leq t\leq T} x_t ) + B \cdot y$ subject to $x_t + y \geq 1$ for all $1 \leq t \leq T$ and $x_t, y \geq 0$. Show that this is indeed a relaxation of the optimal solution if we lived in the city for $T$ days.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[5] Construct the dual of this LP using variables $z_t$. Write down the objective function and constraints.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[10] Now in the online problem, the constraints $x_t + y \geq 1$ appear one by one, i.e., for each new day we are living in the city, the new constraint appears we need to satisfy. So we first construct a fractional solution with small cost as follows. Initialize $y \gets 0$. On each new day $t$, if $y < 1$, then update $y \gets y (1 + \frac1B) + \frac{1}{cB}$ and, set $x_t = 1 - y$. Correspondingly, we also update $z_t \gets 1$ for the dual. On the other hand, if $y \geq 1$ then do nothing both to primal and dual. We will soon determine the value of $c$. For this update rule, first show that the primal solution we maintain is a feasible fractional solution. Moreover, show that the increase in primal objective is $1+1/c$ while the increase in dual objective is $1$.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[10] Now, for what value of $c$ will the dual be feasible? So note that whenever we set $z_t \gets 1$, the $y$ value increases. So set $c$ so that the $y$ variable reaches $1$ by time $t = B$ and show that this will imply that the dual we construct is a feasible dual solution.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[10] Using the above parts, show that our fractional cost has competitive ratio of roughly $e/(e-1)$. 
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+
+\part[10] Finally, for the rounding. Suppose we choose a random real value $\tau$ uniformly between $0$ and $1$. Then we buy the modem on the first day the $y$ value exceeds $\tau$ (until then we keep leasing). Show that the competitive ratio of this algorithm is also the same as the fractional competitive ratio identified above. This shows the power of randomization, and also the use of the primal-dual method for online algorithms!
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\end{parts}
+
+
+
+\question[0] {\bf Difficulty Level.} How difficult was this homework? How much time would you have spent on these questions?
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+
+\end{questions}
+\end{document} 

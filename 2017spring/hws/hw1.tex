@@ -1,0 +1,141 @@
+\documentclass[solution,addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newenvironment{Solution}{\begin{EnvFullwidth}\begin{solution}}{\end{solution}\end{EnvFullwidth}}
+
+\printanswers
+%\unframedsolutions
+\pagestyle{headandfoot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% INSTRUCTIONS %%%%%%%%%%%%%%%%%%%%%
+% * Fill in your name and roll number below
+
+% * Answer in place (after each question)
+
+% * Use \begin{solution} and \end{solution} to typeset
+%   your answers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fill in the details below
+\def\studentName{\textbf{TODO: Name}}
+\def\studentRoll{\textbf{TODO: Roll}}
+
+\firstpageheader{CS 6841 - Assignment 1}{}{\studentName, \studentRoll}
+\firstpageheadrule
+
+\newcommand{\brac}[1]{\left[ #1 \right]}
+\newcommand{\curly}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\card}[1]{\left\lvert #1 \right\rvert}
+
+\newcommand{\prob}{\operatorname{\mathbf{Pr}}}
+\newcommand{\ex}{\operatorname{\mathbf{E}}}
+\newcommand{\from}{\leftarrow}
+
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\reals}{\mathbb{R}}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\hashFamily}{\mathcal{H}}
+
+\newcommand{\Yes}{\texttt{Yes}}
+\newcommand{\No}{\texttt{No}}
+
+\begin{document}
+
+\begin{questions}
+
+
+\question[10] \textbf{(How good is greedy for Vertex Cover)}  This will drive down the reason we study other algorithms for set cover even though in general we know that greedy is optimal. There could be a large family of instances which have structure where we can outperform greedy.
+\begin{parts}
+\part[10] Construct an example where the greedy algorithm has an approximation ratio of $\Omega(\log n)$ for the vertex cover problem where there are $n$ vertices in the graph.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\end{parts}
+
+\question[25] \textbf{(Finishing the Set Cover Rounding Proof)}  We'd left the final parts of the proof as homework. You'll now complete this.
+\begin{parts}
+\part[10] We showed the following two properties which our rounding algorithm satisfies (if we repeated the randomized rounding experiment for $T = 2 \ln n$ steps: (i) the expected cost is $2 \ln n {\sf Opt}$ where ${\sf Opt}$ is the cost of the optimal LP fractional solution, and (ii) the probability with which all elements are covered is at least $1 - \frac{1}{n}$. Show that there with some constant probability, we will find a solution which has cost at most $O(1) \ln n$ and also covers all the elements. (Hint: Use Markov's inequality and the union bound)
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[10] Now if instead of running our rounding $T = 2 \ln n$ times, if we had run it a different number (say, $\ln n + C \ln \ln n$) of times. Then try to optimize the parameters and show that we will compute, with some non-trivial probability of $\Omega(\frac{1}{\ln n})$, a solution where the cost is $\left( \ln n + O(\ln \ln n) \right) {\sf Opt}$ and all elements are covered.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[5] Finally boost the success probability above by repeating this algorithm some number of times. Roughly how many times do you need to run to get probability of failure to be $e^{-n}$?
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\end{parts}
+
+\question[20] \textbf{(Integrality Gap for Robust Min-Sum-Set-Cover)}  Consider the generalization of min-sum-set-cover where the cover time of an element is defined to be the first time when the element is covered $K$ times, for a given parameter $K$. We will now show that the natural LP has a large integrality gap for this instance.
+\begin{parts}
+\part[10] Write the natural LP for this problem.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[10] Consider the following instance, and show that it has a large integrality gap. The universe of elements $U = \{e_1, e_2, \ldots, e_l\}$. The sets are ${\cal S} = \{S_1 \equiv \{e_1, e_2, \ldots, e_l\}, S_2 \equiv \{e_1, e_2, \ldots, e_l\}, \ldots, S_n \equiv \{e_1, e_2, \ldots, e_l\}, S_{n+1} = \{e_1\}, S_{n+2} = \{e_2\}, \ldots, S_{n+l} = \{e_l\}\}$. Suppose the coverage requirement $K = (n+1)$. Show that we can set values of $l$ and $n$ so that the LP solution and integral solutions have a large gap. For this, you need to exhibit some fractional solution of low cost and show that all integral solutions have much larger cost.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\end{parts}
+
+\question[30] \textbf{(Structure of a fractional optimum for the vertex cover LP relaxation)}
+Recall in class that we wrote down an integer linear program of two variable inequalities (one per edge) such that a feasible 0-1 solution is a vertex cover.  Let VC denote this integer linear program, and let LPVC denote the vertex relaxation.  Let $x^*$ an optimum solution to LPVC and let $V_0, V_1, V_h$ be the 3 vertex sets of the graph as discussed in class.
+\begin{parts}
+\part[5] Show that $N(V_0) = V_1$. 
+\begin{solution}
+\begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+\end{solution}
+\part[10] Show that the value of $x^*$ is  $|V_1|- |V_0| + \frac{|V_h|}{2}$. 
+\begin{solution}
+\begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+\end{solution}
+\part[5] Show that all the corner points of the polytope are half-integral.
+\begin{solution}
+\begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+\end{solution}
+\part[10] Use the above arguments to compute the minimum vertex cover of a tree.
+\begin{solution}
+\begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+\end{solution}
+\end{parts}
+
+
+
+\end{questions}
+\end{document} 

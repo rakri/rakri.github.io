@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="author" content="Ravishankar Krishnaswamy" />
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<title>Ravishankar Krishnaswamy</title>
+
+<script language="javascript">
+// Expandable content script from flooble.com.
+// For more information please visit:
+//   http://www.flooble.com/scripts/expand.php
+// Copyright 2002 Animus Pactum Consulting Inc.
+//----------------------------------------------
+var ie4 = false; if(document.all) { ie4 = true; }
+function getObject(id) { if (ie4) { return document.all[id]; } else { return document.getElementById(id); } }
+function toggle(link, divId) { var lText = link.innerHTML; var d = getObject(divId);
+ if (lText == '+') { link.innerHTML = '--'; d.style.display = 'block'; }
+ else { link.innerHTML = '+'; d.style.display = 'none'; } }
+</script>
+<!-- flooble Expandable Content header end   -->
+
+
+</head>
+<body>
+	<div id="page" align="center"> 
+
+<!--#include virtual="header.html" --> 
+<div id="titlebar" class="titletext">Research</div> 
+					<div id="mainbody" class="bodytext" align="justify">
+
+
+<br><br>
+I am interested in approximation algorithms and combinatorial optimization. Currently, I'm working on stochastic optimization problems (like Multi-Armed Bandits and stochastic Orienteering), and some scheduling problems.
+</p>
+<p>
+<b><u>Publications</u></b>
+<br><i>(click on the + sign for a brief description)</i></p>
+
+
+<p>
+<!-- flooble Expandable Content box start -->
+<div style="border: 0px solid rgb(220,220,355); padding: 0px; background: #EEEEEE; " valign="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" style="background: rgb(245,245,245); color: #555555; ">
+<tr><td>
+<b>Approximation Algorithms for Correlated Stochastic Knapsack and Non-Martingale Bandits</b>
+
+ (<a href="files/papers/stocK.pdf">pdf</a>)<br>
+with Anupam Gupta, Marco Molinaro and R. Ravi.<br>
+<i>FOCS 2011 </i>
+</td><td align="right">
+[<a title="show/hide" id="exp1247393765_link" href="javascript: void(0);" onclick="toggle(this, 'exp1247393765');"  style="text-decoration: none; color: #656565; ">o</a>]</td></tr></table>
+
+<div id="exp1247393765" style="padding: 3px;">
+We extend the results of Dean, Goemans and Vondrak for the Stochastic Knapsack problem to one where the reward of an item may be correlated with the size it instantiates to, and give a constant-factor non-adaptive approximation algorithm. We use ideas for this problem and also present a constant-factor adaptive approximation algorithm for the general Multi-Armed Bandits problem, relaxing certain Martingale property requirements of currently known algorithms.
+</div>
+</div><noscript></noscript>
+<script language="javascript">toggle(getObject('exp1247393765_link'), 'exp1247393765');</script>
+</p>
+
+
+<div style="border: 0px solid rgb(220,220,355); padding: 0px; background: #EEEEEE; " valign="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" style="background: rgb(255,255,255); color: #555555; ">
+<tr><td>
+<b>On Capacitated Set Cover Problems</b>
+
+ (<a href="files/papers/column-res.pdf">pdf</a>)<br>
+with Nikhil Bansal and Barna Saha<br>
+<i>APPROX 2011 </i>
+</td><td align="right">
+[<a title="show/hide" id="exp1227393765_link" href="javascript: void(0);" onclick="toggle(this, 'exp1227393765');"  style="text-decoration: none; color: #656565; ">o</a>]</td></tr></table>
+
+<div id="exp1227393765" style="padding: 3px;">
+We show that if a set system has hereditary approximation ratio of A (i.e., approximation ratio of any subsystem is also A), then its priority covering problem has an A log<sup>2</sup> k approximation algorithm. In particular such set systems admit an A log log<sup>2</sup> C approximation algorithm for the capacitated set cover problem where C is the maximum capacity of any set. We also show that this is tight upto log log C factor. 
+</div>
+</div><noscript></noscript>
+<script language="javascript">toggle(getObject('exp1227393765_link'), 'exp1227393765');</script>
+</p>
+
+
+<p>
+<!-- flooble Expandable Content box start -->
+<div style="border: 0px solid rgb(220,220,355); padding: 0px; background: #EEEEEE; " valign="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" style="background: rgb(245,245,245); color: #555555; ">
+<tr><td>
+<b>The Matroid Median Problem</b>
+
+ (<a href="files/papers/matroid-median.pdf">pdf</a>)<br>
+with Amit Kumar, Viswanath Nagarajan, Yogish Sabharwal and Barna Saha.<br>
+<i>SODA 2011</i>
+</td><td align="right">
+[<a title="show/hide" id="exp1247893866_link" href="javascript: void(0);" onclick="toggle(this, 'exp1247893866');"  style="text-decoration: none; color: #666666; ">o</a>]</td></tr></table>
+
+<div id="exp1247893866" style="padding: 3px;"> 
+In the classic k-median problem, given a metric space, we are required to open k centers to minimize the total cost of connecting each client to the nearest open center. What if the vertices belonged to L color classes, and there are different budgets on the number of centers that can be opened in each color class? For example, if there are 2 color classes, then the constraint would be to open r red centers and b blue centers, and the objective is again to minimize the total cost of connecting each client to the nearest open center (clients don't have any colors). 
+
+In this paper, we give a constant approximation for this, and the more general setting where the open centers have to form an independent set of a given matroid. The technique involves sparsifying an LP solution, to reduce it to a feasible solution of another LP which almost resembles matroid intersection, which is an integral polytope.
+</div>
+</div><noscript></noscript>
+<script language="javascript">toggle(getObject('exp1247893866_link'), 'exp1247893866');</script>
+</p>
+
+
+<p>
+<!-- flooble Expandable Content box start -->
+<div style="border: 0px solid rgb(220,220,355); padding: 0px; background: #EEEEEE; " valign="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" style="background: rgb(255,255,255); color: #555555; ">
+<tr><td>
+<b>Better Scalable Algorithms for Broadcast Scheduling</b>
+
+ (<a href="files/papers/broadcast.pdf">pdf</a> | <a href="files/ppts/broadcast.pptx">ppt</a>)<br>
+with Nikhil Bansal and Viswanath Nagarajan.<br>
+<i>ICALP 2010. CMU Tech Report CMU-CS-09-174 </i>
+</td><td align="right">
+[<a title="show/hide" id="exp1247893765_link" href="javascript: void(0);" onclick="toggle(this, 'exp1247893765');"  style="text-decoration: none; color: #656565; ">o</a>]</td></tr></table>
+
+<div id="exp1247893765" style="padding: 3px;">
+ In the broadcast scheduling problem, there are a set of <i>n</i> pages, and requests for these arrive online. The server can broadcast pages at a fixed speed, and with any broadcast of some page, all pending requests for that page get satisfied. The goal is then to minimize the average response time of the requests. In this paper, we give an O(1 + &epsilon;)-speed O(1/&epsilon;<sup>2</sup>)-competitive online algorithm for the general problem with arbitrary page sizes.
+ </div>
+</div><noscript></noscript>
+<script language="javascript">toggle(getObject('exp1247893765_link'), 'exp1247893765');</script>
+</p>
+
+
+<p>
+<!-- flooble Expandable Content box start -->
+<div style="border: 0px solid rgb(220,220,355); padding: 0px; background: #EEEEEE; " valign="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" style="background: rgb(245,245,245); color: #555555; ">
+<tr><td>
+<b>Scalably Scheduling Power-Heterogeneous Processors</b>
+
+ (<a href="files/papers/icalpfinal.pdf">pdf</a> | <a href="files/ppts/power-icalp.pptx">ppt</a>)<br>
+with Anupam Gupta and Kirk Pruhs.<br>
+<i>ICALP 2010</i>
+</td><td align="right">
+[<a title="show/hide" id="exp1247893763_link" href="javascript: void(0);" onclick="toggle(this, 'exp1247893763');"  style="text-decoration: none; color: #666666; ">o</a>]</td></tr></table>
+
+<div id="exp1247893763" style="padding: 3px;"> 
+We give an online speed-scaling algorithm which achieves constant competitiveness with <i>(1 + &epsilon;)</i>-speed augmentation for the problem of scheduling jobs on non-identical machines with each machine having an arbitrary power function, for the objective function of total flow time plus energy consumed.
+</div>
+</div><noscript></noscript>
+<script language="javascript">toggle(getObject('exp1247893763_link'), 'exp1247893763');</script>
+</p>
+
+
+<p>
+<!-- flooble Expandable Content box start -->
+<div style="border: 0px solid rgb(220,220,355); padding: 0px; background: #EEEEEE; " valign="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" style="background: rgb(255,255,255); color: #555555; ">
+<tr><td>
+<b>Scheduling Jobs with Varying Parallelizability to Reduce Variance</b>
+
+ (<a href="files/papers/spaa10.pdf">pdf</a>)<br>
+with Anupam Gupta, Sungjin Im, Benjamin Moseley and Kirk Pruhs.<br>
+<i>SPAA 2010</i>
+</td><td align="right">
+[<a title="show/hide" id="exp1247893764_link" href="javascript: void(0);" onclick="toggle(this, 'exp1247893764');"  style="text-decoration: none; color: #666666; ">o</a>]</td></tr></table>
+
+<div id="exp1247893764" style="padding: 3px;"> 
+We give an online algorithm which achieves constant competitiveness with <i>(p + &epsilon;)</i>-speed augmentation for the problem of non-clairvoyantly scheduling jobs with different degrees of parallelism on identical machines, with the objective of minimizing the L<sub>p</sub> norm of flowtimes.
+</div>
+</div><noscript></noscript>
+<script language="javascript">toggle(getObject('exp1247893764_link'), 'exp1247893764');</script>
+</p>
+
+<p>
+<!-- flooble Expandable Content box start -->
+<div style="border: 0px solid rgb(220,220,355); padding: 0px; background: #EEEEEE; " valign="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" style="background: rgb(245,245,245); color: #555555; ">
+<tr><td>
+<b>A Constant Factor Approximation Algorithm for Generalized Min-Sum Set Cover</b>
+
+ (<a href="files/papers/gen-mssc.pdf">pdf</a> | <a href="files/ppts/gen-mssc.pptx">ppt</a>)<br>
+with Nikhil Bansal and Anupam Gupta.<br>
+<i>SODA 2010</i>
+</td><td align="right">
+[<a title="show/hide" id="exp1247893766_link" href="javascript: void(0);" onclick="toggle(this, 'exp1247893766');"  style="text-decoration: none; color: #666666; ">o</a>]</td></tr></table>
+
+<div id="exp1247893766" style="padding: 3px;"> 
+ Consider the generalized min-sum set cover problem: we are given a universe of elements and a collection of subsets. Each subset S also has a requirement K(S). The goal is to output an ordering of the universe so that the total cover time of the sets is minimized, where the cover time of a set S is the earliest position in the order when K(S) elements from S have been output. We give a constant-factor approximation algorithm for this problem via rounding of a strengthened LP relaxation.</div>
+</div><noscript></noscript>
+<script language="javascript">toggle(getObject('exp1247893766_link'), 'exp1247893766');</script>
+</p>
+
+<p>
+<!-- flooble Expandable Content box start -->
+<div style="border: 0px solid rgb(220,220,355); padding: 0px; background: #EEEEEE; " valign="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" style="background: rgb(255,255,255); color: #555555; ">
+<tr><td>
+<b>Tree Embeddings for Two-Edge-Connected Network Design</b>
+
+ (<a href="files/papers/2-ecnd.pdf">pdf</a> | <a href="files/ppts/2gst.pptx">ppt</a>)<br>
+with Anupam Gupta and R. Ravi.<br>
+<i>SODA 2010</i>
+</td><td align="right">
+[<a title="show/hide" id="exp1247893767_link" href="javascript: void(0);" onclick="toggle(this, 'exp1247893767');"  style="text-decoration: none; color: #666666; ">o</a>]</td></tr></table>
+
+<div id="exp1247893767" style="padding: 3px;"> In this paper, we look at the 2-edge-connectivity generalization of the problems: (i) group Steiner tree (now we want to choose representatives from each group and 2-connect them to the root), (ii) connected facility location (the facilities need to be 2-edge-connected), (iii) buy-at-bulk (the demand pairs need 2-edge-disjoint paths), and (iv) k-MST (pick an arbitrary set of k vertices and 2-connect them). We show that tree embedding techniques can be used to simplify all these problems and obtain polylogarithmic approximations.
+ </div>
+</div><noscript></noscript>
+<script language="javascript">toggle(getObject('exp1247893767_link'), 'exp1247893767');</script>
+</p>
+
+
+<p>
+<!-- flooble Expandable Content box start -->
+<div style="border: 0px solid rgb(220,220,355); padding: 0px; background: #EEEEEE; " valign="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" style="background: rgb(245,245,245); color: #555555; ">
+<tr><td>
+<b>Scheduling with Outliers</b>
+
+ (<a href="files/papers/outliers.pdf">pdf</a> | <a href="http://arxiv.org/abs/0906.2020">arXiv</a> | <a href="files/ppts/outliers.ppt">ppt</a>)<br>
+with Anupam Gupta, Amit Kumar and Danny Segev.<br>
+<i>APPROX 2009</i>
+</td><td align="right">
+[<a title="show/hide" id="exp1247893768_link" href="javascript: void(0);" onclick="toggle(this, 'exp1247893768');"  style="text-decoration: none; color: #666666; ">o</a>]</td></tr></table>
+
+<div id="exp1247893768" style="padding: 3px;"> In this paper, we study scheduling problems with the added flexibility of not picking a small fraction of jobs. Formally, given a set of jobs (each with an associated profit) and an objective function (like maximum makespan, average completion time, or average flow time), the goal is to schedule a subset of jobs that achieve some target profit, while minimizing the objective function on those set of jobs.
+</div>
+</div><noscript></noscript>
+<script language="javascript">toggle(getObject('exp1247893768_link'), 'exp1247893768');</script>
+</p>
+
+
+<p>
+<!-- flooble Expandable Content box start -->
+<div style="border: 0px solid rgb(220,220,355); padding: 0px; background: #EEEEEE; " valign="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" style="background: rgb(255,255,255); color: #555555; ">
+<tr><td>
+<b> Online and Stochastic Survivable Network Design</b>
+
+ (<a href="files/papers/cost-shares.pdf">pdf</a> | <a href="files/ppts/kconn.pptx">ppt</a>)<br>
+with Anupam Gupta and R. Ravi.<br>
+ <i>STOC 2009. Invited to the SICOMP special issue.</i>
+</td><td align="right">
+[<a title="show/hide" id="exp1247893769_link" href="javascript: void(0);" onclick="toggle(this, 'exp1247893769');"  style="text-decoration: none; color: #666666; ">o</a>]</td></tr></table>
+
+<div id="exp1247893769" style="padding: 3px;"> 
+Consider the following generalization of the online Steiner tree problem: each day, a new pair of vertices (s<sub>i</sub>,t<sub>i</sub>) arrive requiring k-edge-connectivity; the objective is to buy a set of edges to k-connect these vertices such that the total cost of the edges bought till date is competitive with the cost of the optimal offline solution feasible to the pairs that have arrived. We give an online algorithm with polylogarithmic competitiveness, by using recent results on embeddings into subtrees to get more structure on the cuts.
+</div>
+</div><noscript></noscript>
+<script language="javascript">toggle(getObject('exp1247893769_link'), 'exp1247893769');</script>
+</p>
+<p>
+<div style="border: 0px solid rgb(220,220,355); padding: 0px; background: #EEEEEE; " valign="center"><table border="0" cellspacing="0" cellpadding="0" width="100%" style="background: rgb(245,245,245); color: #555555; ">
+<tr><td>
+<b>Fault Tolerant Network Coding</b>
+(<a href="files/papers/btech.pdf">full version</a> | <a href="files/papers/src-ravi.pdf">summary</a>)<br>
+
+<i>B.Tech Thesis</i></p>
+</td></tr></table></div>
+</p>
+<br><br>
+				</div>
+	</div>
+</body>
+</html>

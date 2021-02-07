@@ -1,0 +1,121 @@
+\documentclass[solution,addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newenvironment{Solution}{\begin{EnvFullwidth}\begin{solution}}{\end{solution}\end{EnvFullwidth}}
+
+\printanswers
+%\unframedsolutions
+\pagestyle{headandfoot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% INSTRUCTIONS %%%%%%%%%%%%%%%%%%%%%
+% * Fill in your name and roll number below
+
+% * Answer in place (after each question)
+
+% * Use \begin{solution} and \end{solution} to typeset
+%   your answers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fill in the details below
+\def\studentName{\textbf{TODO: Name}}
+\def\studentRoll{\textbf{TODO: Roll}}
+
+\firstpageheader{CS 6841 - Assignment 2}{}{\studentName, \studentRoll}
+\firstpageheadrule
+
+\newcommand{\brac}[1]{\left[ #1 \right]}
+\newcommand{\curly}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\card}[1]{\left\lvert #1 \right\rvert}
+
+\newcommand{\prob}{\operatorname{\mathbf{Pr}}}
+\newcommand{\ex}{\operatorname{\mathbf{E}}}
+\newcommand{\from}{\leftarrow}
+
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\reals}{\mathbb{R}}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\hashFamily}{\mathcal{H}}
+
+\newcommand{\Yes}{\texttt{Yes}}
+\newcommand{\No}{\texttt{No}}
+
+\begin{document}
+
+\begin{questions}
+
+
+\question[30] \textbf{(Finishing the Arborescence proofs)}  You will complete the formal arguments for the proofs we only sketched in class.
+\begin{parts}
+\part[5] Recap the primal-dual algorithm (with reverse delete) for min-cost arborescence.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[10] In the iterative step, recall that we find a minimal strongly connected component $S$ which has incoming arcs in the current solution. If such a component exists and does not contain the root $r$, then we raise its dual variable $y_S$ and proceed. Show that if we cannot find such a component, then the current solution (before reverse delete) is feasible.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[15] Let $F^*$ be the final solution after reverse delete. Then, show that for any variable $y_S > 0$ (i.e., it has strictly positive contribution) to the dual, then $ | F^* \cap \delta^{-}(S)| = 1$, i.e., we satisfy the relaxed complementary slackness condition with $\lambda = 1$. This should use the property of reverse delete, and also how we choose the minimal strongly connected components at any time to raise the dual.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\end{parts}
+
+\question[15] \textbf{(Gap Example for Local Search)} In class, we saw that local search yields a $1/2$-approximation for Max-$k$-Coverage. Now you will construct an example where it can be stuck at such a solution which is factor $1/2$-off from the optimal. 
+\begin{parts}
+\part[15] Indeed, we said that if we start with any arbitrary collection of $k$ sets, and keep making swaps as long as we improve the total coverage, we repeat until we stop. Construct an instance of max-$k$-coverage where, if we started off with a bad solution (you can choose this solution), the local search algorithm would not even make one improvement. That is, it stops there. Moreover, if this starting solution only covers $1/2$ the number of elements of an optimal solution, then we would have shown a tight bad example for our local search analysis. (Hint: try to construct an instance where all the inequalities we used in our swap-based proof are almost tight. Indeed, if they were sloppy, then we could have done a better analysis).
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\end{parts}
+
+\question[10] \textbf{(Connectivity Problem)}  Consider the following problem: we have a graph $G = (V,E)$, and edges have cost $c_e \geq 0$. Now, we have a set $S$ of senders, and a set $R$ of receivers such that $S \cap R = \emptyset$. The goal is to find a set of edges $F$ with minimum total cost $\sum_{e \in F} c_e$ such that each receiver $r \in R$ is connected to at least one sender $s \in S$ (it can be any sender, doesn't matter which).
+\begin{parts}
+\part[10] Design a $2$-approximation algorithm for this problem. You may reduce it to some problem we've already studied in class.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\end{parts}
+
+
+\question[20] \textbf{(Some Non-Approximability Problems)}  We saw in class that the Steiner Tree and Steiner Forest had $2$-approximation algorithms. Now we show that a slight change to the problem makes them quite different. Suppose we have a vertex-cost version of the problem. That is, we have a graph $G = (V,E)$ and each vertex has a cost $c_v \geq 0$ (and edges have no cost). We are given a root $r \in V$, and a set of terminals $T \subseteq V$. The goal is to find a set of vertices $V' \subseteq V$ such that in the sub-graph induced by $V'$ (i.e. take vertices in $V'$ and all edges between any pair of vertices in $V'$), the root is connected to every terminal.
+\begin{parts}
+\part[5] Show that if we have an $\alpha$-approximation for this problem, then we can use this to design an $\alpha$-approximation for the Steiner Tree problem also.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[15] More interestingly, show that if we have an $\alpha$-approximation for this problem, then we can use this to design an $\alpha$-approximation for the Set Cover problem also. Using this and results mentioned in class, what is the factor of non-approximability you can prove for this problem?
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\end{parts}
+
+
+\end{questions}
+\end{document} 

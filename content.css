@@ -1,0 +1,83 @@
+/* Generic content */
+
+a {
+    text-decoration: none;
+    color: #09c;
+}
+
+a:hover {
+    color: #339900;
+}
+
+
+div.section-heading {
+    font-size: 20pt;
+    color: #000;
+    font-variant: small-caps;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #888;
+}
+
+p.section-content {
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 1.4em;
+}
+
+div.pub-entry {
+    margin-top: 15px;
+    text-align: justify;
+    line-height: 1.4em;
+}
+
+span.title {
+    font-style: italic;
+    color: #000;
+}
+
+div.ta-entry {
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 1.4em;
+}
+
+span.course-name {
+    font-style: italic;
+    color: #222;
+}
+
+div.pics {
+    padding-top: 10px;
+    text-align: center;
+}
+
+img.sport-pic {
+    height: 75px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+img.footer-image {
+    margin-left: 10px; 
+    vertical-align:middle;
+}
+
+/* Specific content */
+
+div#me {
+    font-family: bebas;
+    font-size: 26pt;
+    letter-spacing: 2px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    color: #09c;
+}
+
+div#research-image {
+    text-align: center;
+}
+
+img#research {
+    width: 275px;
+}

@@ -1,0 +1,332 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="
+  text/html; charset=us-ascii" />
+  <title>CS6841: IITM Advanced Algorithms, Jan-May 2016</title>
+<script src="ASCIIMathML.js" type="text/javascript">
+</script>
+
+<!--<style type="text/css" media="screen">
+body { background-color: #F4F4F4;
+   /* font-family: Georgia, "Times New Roman", Times, serif;
+   font-size: 80%; */ /* Resets 1em to 10px */ 
+   }
+.notes {color: #333333;}
+ul {color: #003380;}
+ol {color: #983514;}
+li {padding-top: 0.10em;}
+h3 {color: #444444;}
+</style>-->
+
+</head>
+
+<body onload="translate()">
+<h2> CS6841: Advanced Algorithms, Jan-May 2016</h2>
+<dl>
+<dd> <b>Lecturers</b>: <a href="http://www.cs.cmu.edu/~ravishan">Ravishankar Krishnaswamy</a>, <a href="http://www.cse.iitm.ac.in/~rajsekar/">Rajsekar Manokaran </a><br>
+<dd> <b>TAs</b>:<br>
+<br>
+<dd><b>Location</b>: CS27, W 2:00-3:50. F 3:00-4:50
+</dl>
+
+<hr>
+<h3>Announcements</h3>
+
+<ul>
+ <li><a href="scribe.html">Scribing instructions</a></li> (scribe notes are largely for students' benefit as auxiliary material to their own notes, they have not been edited/verified by the instructors; please use them at your discretion.)
+</ul>
+<hr>
+
+<h3>Homeworks</h3>
+
+<ul>
+ <li><a href="hws/assignment1.pdf">Homework 1</a> (<a href="hws/assignment1.tex">source file</a> for typsetting answers)  (due 12/02/2016)</li>
+ <li><a href="hws/assignment2.pdf">Homework 2</a> (<a href="hws/assignment2.tex">source file</a> for typsetting answers)  (due 04/03/2016)</li>
+ <li><a href="hws/midsem.pdf">Midsem Takehome Exam</a> (<a href="hws/midsem.tex">source file</a> for typsetting answers) (due 06/03/2016)</li>
+ <li><a href="http://goo.gl/forms/19BeHQWacz"> Midsem Feedback</a></li>
+ <li><a href="hws/assignment3.pdf">Homework 3</a> (<a href="hws/assignment3.tex">source file</a> for typsetting answers)  (due 08/04/2016)</li>
+ <li><a href="hws/assignment4.pdf">Homework 4</a> (<a href="hws/assignment4.tex">source file</a> for typsetting answers)  (due 15/04/2016)</li>
+ <li><a href="hws/assignment5.pdf">Homework 5</a> (<a href="hws/assignment5.tex">source file</a> for typsetting answers)  (due 23/04/2016)</li>
+ <li><a href="hws/endsem.pdf">Endsem Takehome Exam</a> (<a href="hws/endsem.zip">source files</a> for typsetting answers) (due 08/05/2016)</li>
+</ul>
+And here are some common references for all the homeworks. 
+<ul>
+ <li><a href="http://www.cs.cmu.edu/~anupamg/advanced/lectures/lecture18.pdf">Chernoff, Bernstein, Markov, Chebyshev.</a></li>
+</ul>
+
+<hr>
+
+<h3>Completed Lectures, and Tentative Outline</h3>
+
+<h4><u>Part 1: Dimension Reduction for Better Data-Structures and Algorithms</u></h4>
+
+<ul style="list-style: none;">
+ <li><b>(13/01) Lecture 1.</b> Hashing, Universal Hashing, Perfect Hashing, Balls and Bins.
+ <i><ul>
+   <li>Jeff
+   Ericksson's <a href="http://web.engr.illinois.edu/~jeffe/teaching/algorithms/notes/12-hashing.pdf">comprehensive
+   notes</a>. </li>
+ </ul></i>
+ <br>
+
+ <li><b>(20/01) Lecture 2.</b> Balls and Bins Lower Bound, Power of Two Choices.
+ <i><ul>
+   <li>Anupam Gupta's <a href="http://www.cs.cmu.edu/~avrim/Randalgs11/lectures/lect0202.pdf">comprehensive
+   notes</a>. </li>
+   <li>Balls and Bins lower bound used "negative correlation", and power of two choices proof used Bernstein's inequality.
+ </ul></i>
+ <br>
+ 
+ <li><b>(22/01) Lecture 3.</b> Cuckoo Hashing.
+ <i><ul>
+   <li>Scribe notes <a href="lec_3.pdf">link</a>.</li>
+   <li>Went over examples of different concentration bounds (Markov, Chebyshev, and Bernstein).</li>
+   <li>Described Cuckoo Hashing algorithm, introduced random graph view of analyzing the algorithm, intro to Branching Processes.</li>
+   <li>Proof also used Wald's equation, we stated this without proof.</li>
+ </ul></i>
+ <br>
+
+ <li><b>(27/01) Lecture 4.</b> Min-hash for estimating Similarity, Locality Sensitive Hashing. 
+<i><ul>
+<li>Alex Andoni and Piotr Indyk's beautiful <a href="https://people.csail.mit.edu/indyk/p117-andoni.pdf">CACM article</a>.</li>
+<li>Gionis, Indyk, Motwani's <a href="http://people.csail.mit.edu/indyk/vldb99.ps">paper</a> on LSH schemes.</li>
+<li>Scribe notes are <a href="lecture04.pdf">here</a>.</li></ul>
+</i>
+<br>
+
+ <li><b>(29/01) Lecture 5.</b> Dimensionality Reduction: Johnson Lindenstrauss Lemma. 
+<i><ul>
+<li>Introduced Gaussian random variables, studied some of their properties, and proved JL.</li>
+<li>We saw another LSH construction that used Gaussian projections.</li>
+<li>Useful notes are <a href="http://ttic.uchicago.edu/~gregory/courses/LargeScaleLearning/lectures/jl.pdf">here</a>.</li>
+</ul>
+</i>
+<br>
+
+
+ <li><b> (03/02) Lecture 6.</b> Data-Aware Dimensionality Reduction: Singular Value Decomposition.
+<i><ul>
+<li>We followed Chapter 3 from Hopcroft-Kannan's <a href="http://research.microsoft.com/en-US/people/kannan/book-no-solutions-aug-21-2014.pdf">book</a> upto Section 3.5.</li>
+<li>We saw how SVDs capture the best-fit subspaces for any dimension, and also how they capture the best low-rank matrix approximations.</li>
+</ul>
+</i>
+<br>
+
+
+ <li><b> (05/02) Lecture 7.</b> SVDs continued. Algorithmic Application (Graph Partitioning) 
+<i><ul>
+<li>Introduced Stochastic Block Models, and saw how SVD (or eigenvector) approaches can be used to recover the blocks.</li>
+<li>Outlined the proof technique which used matrix perturbation analysis (davis kahan sin-theta theorem) and matrix concentration. </li>
+<li>Roughly followed Dan Spielman's <a href="http://www.cs.yale.edu/homes/spielman/561/lect21-15.pdf">lecture notes</a> here.</li>
+<li>For those interested, Terry tao has some nice <a href="https://terrytao.wordpress.com/2010/01/12/254a-notes-3a-eigenvalues-and-sums-of-hermitian-matrices/">notes</a> on inequalities concerning eigenvalues relating A, B, and A+B.
+<li>Scribe notes are <a href="lecture07.pdf">here.</a></li>
+</ul>
+</i>
+<br>
+
+</ul>
+
+<h4><u>Part 2: Optimizitation with LPs and Convex Programming</u></h4>
+
+<ul>
+
+ <li><b> (10/02) Lecture 8.</b> Intro to LPs and Duality.
+<i><ul>
+<li>Completed the Stochastic Block Model proof.</li>
+<li>Introduced Linear Programming, showed that BFS optimal solutions always exist, and motivated Simplex algorithm.</li>
+<li>Introduced duality and mentioned the strong duality theorem.</li>
+<li>Scribe notes are <a href="lecture08.pdf">here.</a></li>
+</ul>
+</i>
+<br>
+
+ <li><b> (12/02) Lecture 9.</b> LP Duality: Max-Flow Min-Cut, Multiway Cut.
+<i><ul>
+<li>Saw compact formulations for Max-Flow, Showed duality with Min Cut.</li>
+<li>Motivated Ball-cut based rounding procedures.</li>
+<li>Applications in Multiway Cut Approximation Algorithms.</li>
+</ul>
+</i>
+<br>
+
+ <li><b> (17/02) Lecture 10.</b> LP Based Approximation Algorithms.
+<i><ul>
+<li>Introduced Facility Location Problem.</li>
+<li>Showed a Primal-Dual inspired approximation algorithm.</li>
+</ul>
+</i>
+<br>
+
+
+
+ <li><b> (19/02) Lecture 11.</b> Facility Location Primal Dual Algorithm.
+<i><ul>
+<li>Completed the proof of Jain-Vazirani.</li>
+</ul>
+</i>
+<br>
+
+
+
+ <li><b> (24/02) Lecture 12.</b> Unrelated Machine Scheduling.
+<i><ul>
+<li>Showed that BFS = corner points = extreme points.</li>
+<li>Used this to design approximation algorithms for scheduling on unrelated machines.</li>
+<li>Scribe notes are <a href="Lecture12.pdf">here</a>.</li>
+</ul>
+</i>
+<br>
+
+
+ <li><b> (26/02) Lecture 13.</b> Compressed Sensing. 
+<i><ul>
+<li> Motivated compressed sensing using the wine-bottle poison puzzle. We noticed in class that the problem is harder than compressed sensing since we can only see if people fall sick or not (boolean outputs). In fact, it turns out that this problem is a well-studied problem called group testing. See <a href="https://en.wikipedia.org/wiki/Group_testing">this link</a> for more information.</li>
+<li> Saw most of the Candes proof for using RIP-ness to bound error of recovery.</li> 
+<li> Scribe notes are <a href="lecture13.pdf">here</a>.</li>
+</ul>
+</i>
+<br>
+
+
+ <li><b> (02/03) Lecture 14.</b> More Compressed Sensing. 
+<i><ul>
+<li> Finished the compressed sensing recover proof.</li>
+<li> Saw how to prove that Gaussian matrices are RIP using concentration + union bound over all vectors.</li>
+<li> Handwritten notes of second part of Lecture 13 and Lecture 14 are <a href="handwritten_lec13-14.pdf">here</a>.</li>
+</ul>
+</i>
+<br>
+
+
+ <li><b> (04/03) Lecture 15.</b> Recap Lecture. 
+<i><ul>
+<li>Recap of all the important algorithmic techniques and proof techniques covered until now.</li>
+<li>Handwritten notes (without Hashing, JL, and LP Rounding) are <a href="hand_040316.pdf">here</a>.</li>
+</ul>
+</i>
+<br>
+
+
+ <li><b> (09/03) Lecture 16.</b> Intro to Convex Optimization. 
+<i><ul>
+<li> Introduced notions of convex sets, convex functions, gradient, Hessian.</li>
+</ul>
+</i>
+<br>
+
+ <li><b> (11/03) Lecture 17.</b> Gradient Descent. 
+<i><ul>
+<li> Saw how to optimize convex functions using the Gradient Descent algorithm.</li>
+</ul>
+</i>
+<br>
+
+ <li><b> (16/03) Lecture 18.</b> Online Optimization Using Multiplicative Weights Algorithm. 
+<i><ul>
+<li> Introduced notion of regret, and analyzed MW algorithm.</li>
+</ul>
+</i>
+<br>
+
+
+ <li><b> (18/03) Lecture 19.</b> More MW: Applications in Boosting. 
+<i><ul>
+<li> Saw how to reproduce the Boosting algorithm in Machine Learning using MW method.</li>
+</ul>
+</i>
+<br>
+
+
+</ul>
+
+<h4><u>Part 3: Online Models for Resource Allocation Problems</u></h4>
+
+<ul>
+
+
+ <li><b> (23/03) Lecture 20.</b> Online Paging and Online Set Cover. 
+<i><ul>
+<li> Understood notion of Competitive Ratio.</li>
+<li> Motivated online models in several settings, and studied the Marking algorithm for paging. Introduced Online Set Cover problem.</li>
+<li> Handwritten notes <a href="Lecture_2303.pdf"> are here</a>; scribe notes are <a href="lecture20.pdf">here</a>.</li>
+</ul>
+</i>
+<br>
+
+ <li><b> (30/03) Lecture 21.</b> Online Set Cover. 
+<i><ul>
+<li> Finished the online set cover algorithm using primal-dual analysis.</li>
+<li> Introduced the Virtual Circuit Routing problem.</li>
+<li> Handwritten notes <a href="Lecture_3003.pdf"> are here</a>; scribe notes are <a href="lecture21.pdf">here</a>.</li>
+</ul>
+</i>
+<br>
+
+
+ <li><b> (01/04) Lecture 22.</b> Virtual Circuit Routing; Secretary Problem.
+<i><ul>
+<li> Presented the exponential-greedy algorithm and analysis using Potential Functions.</li>
+<li> Introduced "online stochastic" optimization using Secretary problem, and presented the 1/e-competitive algorithm. <a href="https://www.math.upenn.edu/~ted/210F10/References/Secretary.pdf">Here's</a> an article expositing the rich history of the secretary problem.</li>
+<li> Handwritten notes <a href="Lecture0104.pdf"> are here</a>; scribe notes are <a href="lecture22.pdf">here</a>.</li>
+</ul>
+</i>
+<br>
+
+</ul>
+
+<h4><u>Part 4: Expander Graphs and Applications</u></h4>
+
+<ul>
+
+ <li><b> (06/04) Lecture 23.</b> AKS Sorting Networks.
+<i><ul>
+<li> Introduced Sorting Networks and presented simple algorithms.</li>
+<li> Introduced the concept of Expander Graphs, useful in AKS Sorting Networks.</li>
+<li> Scribe notes are <a href="lecture23.pdf">here</a>.</li>
+</ul>
+</i>
+<br>
+
+
+
+ <li><b> (08/04) Lecture 24.</b> Expander Mixing Lemma.
+<i><ul>
+<li> More on expander graphs, how they mix well.</li>
+</ul>
+</i>
+<br>
+
+
+ <li><b> (13/04; 15/04) Lecture 25-26.</b> Spectral Sparsifiers.
+<i><ul>
+<li> Studied Properties of Graph Laplacian, Effective Resistances, Studied Spectral Sparsifiers.</li>
+<li> Scribe notes are <a href="lecture25.pdf">here</a>.</li>
+</ul>
+</i>
+<br>
+
+ <li><b> (22/04) Lecture 26.</b> Recap Lecture.
+<i><ul>
+<li> Recap contents of course, prepare for final exam.</li>
+<li> Handwritten notes <a href="Lecture2204.pdf"> are here</a>.</li>
+</ul>
+</i>
+<br>
+
+
+
+</ul>
+
+
+
+
+<hr>
+
+<i>Thanks to Anupam Gupta for webpage design, and scribe template.</i>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* CSS Document */
+
+/*PAGE LAYOUT*/
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+/*#topheader{float:center; width:80%; height:97px; background-color:#F0F0F0; position:relative}*/
+#topheader{float:center; width:80%; background-color:#F0F0F0; position:relative}
+/*#menu{float:center; width:80%; height:32px; background-color:#555555; background-repeat:repeat-x;}*/
+#menu{width:80%; background-color:#555555; background-repeat:repeat-x;}
+#titlebar{float:center; width:80%; background-color:#F0F0F0;}
+#mainbody{float:center; width:80%;}
+
+/*GRAY PANEL*/
+.graypanel{
+	border:solid 1px #666666; background-color:#F7F7F7; padding:10px; margin:10px;
+}
+
+/*TEXT STYLES*/
+.bodytext {
+font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;
+	color: #666666;
+	/*font-size:13px;*/    
+}
+
+.titletext {
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.42857143;
+	font-size:20px;
+	font-weight:bold;
+	color:#667766;
+}
+.whitetitle {
+font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.42857143;
+	font-size:36px;
+	font-weight:bold;
+	color:#FFFFFF;
+}
+.smalltitle {
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.42857143;
+	font-size:20px;
+	font-weight:bold;
+	color:#CC0000;
+}
+.smallwhitetext {
+font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.42857143;
+	font-size: 14px;
+	font-weight:bold;
+	color: #FFFFFF;
+}
+.smallwhitetext a{
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.42857143;
+	font-size: 14px;
+	font-weight:bold;
+	color: #FFFFFF;
+	text-decoration:none;
+}
+.smallwhitetext a:hover{
+	text-decoration:underline;
+}
+.smallgraytext {
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.42857143;
+	font-size: 14px;
+	font-weight:bold;
+	color:#999999;
+}
+.smallgraytext a{
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.42857143;
+	font-size: 14px;
+	font-weight:bold;
+	color:#999999;
+	text-decoration:none;
+}
+.smallgraytext a:hover{
+	text-decoration:underline;
+}
+.smallredtext {
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.42857143;
+	font-size: 14px;
+	font-weight:bold;
+	color:#CC0000;
+}
+.smallredtext a{
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.42857143;
+	font-size: 14px;
+	font-weight:bold;
+	color:#CC0000;
+	text-decoration:none;
+}
+.smallredtext a:hover{
+	text-decoration:underline;
+}

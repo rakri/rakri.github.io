@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'bebas';
+    font-weight: normal;
+    font-style: normal;
+    src: url('http://www.cs.cmu.edu/~vseshadr/fonts/bebas.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'mate';
+    font-weight: normal;
+    font-style: normal;
+    src: url("http://www.cs.cmu.edu/~vseshadr/fonts/Mate-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'mate';
+    font-weight: normal;
+    font-style: italic;
+    src: url("http://www.cs.cmu.edu/~vseshadr/fonts/Mate-Italic.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'gentium';
+    font-weight: normal;
+    font-style: normal;
+    src: url("http://www.cs.cmu.edu/~vseshadr/fonts/gentium/GenBasR.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'gentium';
+    font-weight: normal;
+    font-style: italic;
+    src: url("http://www.cs.cmu.edu/~vseshadr/fonts/gentium/GenBasI.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: 'anke';
+    font-weight: normal;
+    font-style: normal;
+    src: url("http://www.cs.cmu.edu/~vseshadr/fonts/anke/anke-sans.ttf") format('truetype');
+}

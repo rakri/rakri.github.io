@@ -1,0 +1,296 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="
+  text/html; charset=us-ascii" />
+  <title>CS6841: IITM Approximation Algorithms, Jan-May 2017</title>
+<script src="ASCIIMathML.js" type="text/javascript">
+</script>
+
+<!--<style type="text/css" media="screen">
+body { background-color: #F4F4F4;
+   /* font-family: Georgia, "Times New Roman", Times, serif;
+   font-size: 80%; */ /* Resets 1em to 10px */ 
+   }
+.notes {color: #333333;}
+ul {color: #003380;}
+ol {color: #983514;}
+li {padding-top: 0.10em;}
+h3 {color: #444444;}
+</style>-->
+
+</head>
+
+<body onload="translate()">
+<h2> CS6841: Approximation Algorithms, Jan-May 2017</h2>
+<dl>
+<dd> <b>Lecturers</b>: <a href="http://www.cse.iitm.ac.in/~swamy/doku.php">N.S. Narayanaswamy</a>, <a href="http://www.cs.cmu.edu/~ravishan">Ravishankar Krishnaswamy</a><br>
+<dd> <b>TAs</b>: Dhanyya, Sharmili Murthy<br>
+<br>
+<dd><b>Location</b>: CS27, W 2:00-2:50; F 2:00-4:30 
+</dl>
+
+<hr>
+<h3>Announcements</h3>
+
+<ul>
+<li> (13/1): The course evaluation will be based on roughly 5 homeworks, 1 end-sem, and 1 student presentation (which will happen in teams)</li>
+<li> (13/1): Here are some very useful notes on <a href="http://www.cs.cmu.edu/~anupamg/advanced/lectures/lecture18.pdf">probability bounds: Chernoff, Bernstein, Markov, Chebyshev.</a></li>
+</ul>
+<hr>
+
+<h3>Homeworks</h3>
+
+<ul>
+ <li><a href="hws/hw1.pdf">Homework 1</a> (<a href="hws/hw1.tex">source file</a> for typsetting answers)  (due 10/02/2017)</li>
+ <li><a href="hws/hw2.pdf">Homework 2</a> (<a href="hws/hw2.tex">source file</a> for typsetting answers)  (due 10/03/2017)</li>
+ <li><a href="https://goo.gl/forms/pP5g7pv6bUc3oLRS2">Mid-Semester Course Feedback</a></li>
+ <li><a href="hws/hw3.pdf">Homework 3</a> (<a href="hws/hw3.tex">source file</a> for typsetting answers)  (due 29/03/2017)</li>
+ <li><a href="hws/hw4.pdf">Homework 4</a> (<a href="hws/hw4.tex">source file</a> for typsetting answers)  (due 12/04/2017)</li>
+ <li><a href="hws/endsem.pdf">Endsem Takehome Exam</a> (<a href="hws/endsem.zip">source files</a> for typsetting answers) (due //2017)</li>
+</ul>
+<hr>
+
+<h3>Completed Lectures, and Tentative Outline</h3>
+
+In the first part of the course, we plan to look at basic covering/packing problems such as set cover, max-k-coverage, and submodular maximization. 
+For each of these problems, we will cover various algorithmic techniques (greedy, local search, primal-dual, LP rounding) which have different quality of approximation guarantees depending on the type of input instances.
+Then we will delve into the limitations of these algorithms. Finally, we will discuss the inherent hardness in getting any approximation algorithms for these problems, under standard complexity assumptions.
+
+In the second part, we will follow the same template for graph partitioning problems such as min cut, max cut, multi-cut, and sparsest cut. The techniques now additionally include SDP rounding and metric embeddings.
+
+In the third part, we will focus on resource allocation problems, such as max-min allocation, min-max allocation, and bin packing. Now the techniques will include designing PTASs, and rounding so-called configuration LPs, in addition to the ones described above.
+
+
+<ul style="list-style: none;">
+ <li><b>(13/1/2017) </b> Lecture 1 (RK). Greedy Algorithm for Set Cover and Max Coverage.
+ <i><ul>
+   <li>Introduced approximation algorithms as means to cope with NP-Completeness. </li>
+<li>Presented greedy algorithm for Set Cover and Max-k-Coverage.</li>
+   <li>Introduced Submodular functions and showed how same greedy algorithm works well for maximizing monotone submodular functions.</li>
+ </ul></i>
+</li>
+ <br>
+
+ <li><b>(18/1/2017) </b> Tutorial 1 (NSN).
+ <i><ul>
+   <li>Introduced the dual problem (Hitting Set). </li>
+<li>Motivated and studied algorithms for special case instances of set cover (such as vertex cover).</li>
+ </ul></i>
+</li>
+ <br>
+
+
+
+ <li><b>(20/1/2017) </b> Lecture 2 (RK). LP-Rounding for Set Cover.
+ <i><ul>
+   <li>Motivated Linear Programming as a generic framework.</li>
+<li>Presented randomized rounding for Set Cover.</li>
+   <li>Went over bad examples which show the limits for greedy and LP rounding algorithms (rounding gap vs integrality gap).</li>
+ </ul></i>
+</li>
+<br>
+
+ <li><b>(25/1/2017) </b> Tutorial 2 (NSN).
+ <i><ul>
+   <li>Showed a factor 2-approximation for Vertex Cover by LP rounding. </li>
+<li>Showed matching LP integrality gaps.</li>
+ </ul></i>
+</li>
+ <br>
+
+
+
+ <li><b>(27/1/2017) </b> Lecture 3 (RK). Greedy and LP Rounding for Min-Sum Set Cover.
+ <i><ul>
+<li>Presented greedy algorithm's analysis of a constant factor approximation.</li>
+   <li>Formulated an LP for the problem and showed a rounding with an O(1) factor.</li>
+<li>Introduced a generalization and mentioned how the natural LP can have a large integrality gap.</li> 
+ </ul></i>
+</li>
+<br>
+
+ <li><b>(1/2/2017) </b> Tutorial 3 (NSN).
+ <i><ul>
+   <li>Showed that Vertex Cover LP is 1/2 integral. </li>
+<li>Defined the Feedback Vertex Set problem.</li>
+ </ul></i>
+</li>
+ <br>
+
+
+
+ <li><b>(3/2/2017) </b> Lecture 4 (RK). The Primal-Dual Method.
+ <i><ul>
+<li>Introduced duality, strong duality theorem, and complementary slackness.</li>
+   <li>Motivated the primal-dual algorithmic framework by using relaxed complementary slackness conditions.</li>
+<li>Showed an f-approximation for Set Cover as an application.</li> 
+ </ul></i>
+</li>
+
+<br>
+
+ <li><b>(8/2/2017) </b> Tutorial 4 (NSN).
+ <i><ul>
+   <li>Started the O(log n) algorithm for Feedback Vertex Set. </li>
+ </ul></i>
+</li>
+ <br>
+
+
+
+ <li><b>(10/2/2017) </b> Lecture 5 (RK). The Primal-Dual Method Part 2.
+ <i><ul>
+<li>Went over the primal-dual framework once more.</li>
+   <li>Studied the exact primal-dual algorithm for the minimum cost arborescence problem.</li>
+<li>Introduced the Steiner forest problem.</li> 
+ </ul></i>
+</li>
+
+ <br>
+
+
+
+ <li><b>(17/2/2017) </b> Lecture 6 (RK). The Primal-Dual Method Part 3; Intro to Local Search.
+ <i><ul>
+<li>Designed primal-dual algorithms for Steiner Forest.</li>
+   <li>Intro to local search with Max-k-Coverage.</li>
+<li>Started the analysis of local search for k-median.</li> 
+ </ul></i>
+</li>
+<br>
+
+ <li><b>(22/2/2017) </b> Tutorial 5 (NSN).
+ <i><ul>
+   <li>Showed simple approximation hardness reductions between some problems. </li>
+ </ul></i>
+</li>
+ <br>
+
+
+
+ <li><b>(24/2/2017) </b> Lecture 7 (VG). Introduction to Non-approximability (Guest lecture by Venkat Guruswami).
+ <i><ul>
+<li>Introduced hardness of approximation via promise problems.</li>
+   <li>Stated the PCP theorem and showed its deep connections with hardness of approximation.</li>
+<li>Introduced the Label Cover problem and used to for Max-k-Coverage hardness 1 vs 3/4.</li> 
+ </ul></i>
+</li>
+
+<br>
+
+ <li><b>(3/3/2017) </b> Lecture 8 (RK). Finished 1 vs 3/4 Hardness of Max-k-Coverage.
+ <i><ul>
+<li>Recapped the Label Cover problem.</li>
+   <li>Showed the reduction from Label Cover to Max-k-Coverage.</li> 
+ </ul></i>
+</li>
+
+
+<br>
+
+ <li><b>(10/3/2017) </b> Lecture 9 (RK). The k-Median Problem (Hardness, Local Search, Metric Embeddings).
+ <i><ul>
+<li>Recapped the k-Median problem and showed the hardness reduction from Max-k-Coverage.</li>
+<li>Introduced the notion of Metric Embeddings and showed a O(log n)-approximation using this.</li>
+<li>Completed the analysis of the 5-approximation using local search.</li> 
+ </ul></i>
+</li>
+
+
+<br>
+
+ <li><b>(17/3/2017) </b> Lecture 10 (RK). Semidefinite Programming (Max-Cut, Graph Colouring).
+ <i><ul>
+<li>Introduced Max-Cut and saw a local search 1/2 approximation.</li>
+<li>Motivated Quadratic Programming (and hence SDPs).</li>
+<li>Analyzed Goemans-Williamson rounding for Max-Cut SDP.</li>
+<li>Introduced Graph Colouring program and saw the KMS rounding algorithm for n^0.25 colouring.</li> 
+ </ul></i>
+</li>
+
+
+<br>
+
+ <li><b>(24/3/2017) </b> Lecture 11 (RK). Sparsest Cut.
+ <i><ul>
+<li>Introduced the problem and a metric relaxation.</li>
+<li>Showed Bourgain's metric embedding theorem to get a O(log n) approximation for Sparest Cut.</li>
+<li>While we showed a cheating proof, <a href="http://pages.cs.wisc.edu/~shuchi/courses/880-S07/scribe-notes/lecture19.pdf">see here</a> for the formal proof.
+ </ul></i>
+</li>
+
+
+<br>
+
+ <li><b>(31/3/2017) </b> Lecture 12 (RK). Concentration bounds and applications.
+ <i><ul>
+<li>Went over Markov, Chebyshev, Chernoff and Bernstein's inequalities.</li>
+<li>Saw applications in load balancing, median-of-values for boosting, and set discrepancy.</li>
+ </ul></i>
+</li>
+
+<br>
+
+ <li><b>(07/4/2017) </b> Lecture Canceled.
+</li>
+
+
+<br>
+
+ <li><b>(12/4/2017) </b> Student Presentations.
+</li>
+
+<br>
+
+ <li><b>(19/4/2017) </b> Student Presentations.
+<i><ul>
+<li>End of class! Thanks for attending and participating!</li>
+</ul></i>
+</li>
+
+
+<br>
+
+
+
+</ul>
+
+
+
+
+<h4><u>Student Presentations</u></h4>
+
+This involves reading papers from other areas of computer science where the underlying problem tackled is related to some of the problems studied in this course. 
+The overall goal is to get a sense of how real world problems are abstracted as crisp algorithms questions, and how their (exact or approximate) solutions are deployed back in the real world.
+Students are expected to form groups of two, choose a paper, and present (a) the goal of the paper, (b) the underlying problem, (c) the solution provided in the paper, and (d) any other algorithms based on topics covered in class which might be applicable. 
+The presentations are to be 20 minutes long.
+
+
+
+<ul style="list-style: none;">
+
+<li> <a href="http://cs-people.bu.edu/evimaria/papers/fp0294-tsaparas.pdf">Selecting a comprehensive set of reviews</a>
+<li><a href="http://www.cs.cornell.edu/home/kleinber/kdd03-inf.pdf">Maximizing the spread of influence through a social network</a>
+<li><a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/msr-tr-2010-2_v2.pdf"> Scalable influence maximization for prevalent viral marketing in large-scale social networks</a>
+<li><a href="http://cseweb.ucsd.edu/~snoeren/papers/score-nsdi05.pdf"> IP Fault Localization Via Risk Modeling</a>
+<li><a href="http://www.cs.unc.edu/~jasleen/papers/imc04.pdf"> Efficient Beacon Placement for Network Tomography</a>
+<li><a href="http://www1.se.cuhk.edu.hk/~hcheng/paper/vldb05.pdf"> Mining Compressed Frequent-Pattern Sets</a>
+<li><a href="https://pdfs.semanticscholar.org/4f4e/1fab4ae110423e0c1236fcf5ffd35a2845fb.pdf"> Community-based greedy algorithm for mining top-K influential nodes in mobile social networks</a>
+<li><a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2012/08/kdd325-stanton.pdf"> Streaming graph partitioning for large distributed graphs</a>
+<li><a href="https://courses.cs.washington.edu/courses/cse522/05au/communities-flake.pdf"> Efficient identification of Web communities</a>
+
+
+</ul>
+
+
+
+<hr>
+
+<i>Thanks to Anupam Gupta for webpage design, and scribe template.</i>
+
+</body>
+</html>

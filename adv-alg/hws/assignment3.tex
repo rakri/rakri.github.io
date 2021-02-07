@@ -1,0 +1,130 @@
+\documentclass[solution,addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newenvironment{Solution}{\begin{EnvFullwidth}\begin{solution}}{\end{solution}\end{EnvFullwidth}}
+
+\printanswers
+%\unframedsolutions
+\pagestyle{headandfoot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% INSTRUCTIONS %%%%%%%%%%%%%%%%%%%%%
+% * Fill in your name and roll number below
+
+% * Answer in place (after each question)
+
+% * Use \begin{solution} and \end{solution} to typeset
+%   your answers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fill in the details below
+\def\studentName{\textbf{TODO: Name}}
+\def\studentRoll{\textbf{TODO: Roll}}
+
+\firstpageheader{CS 6841 - Assignment 3}{}{\studentName, \studentRoll}
+\firstpageheadrule
+
+\newcommand{\brac}[1]{\left[ #1 \right]}
+\newcommand{\curly}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\card}[1]{\left\lvert #1 \right\rvert}
+
+\newcommand{\prob}{\operatorname{\mathbf{Pr}}}
+\newcommand{\ex}{\operatorname{\mathbf{E}}}
+\newcommand{\from}{\leftarrow}
+
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\integers}{\mathbb{Z}}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\hashFamily}{\mathcal{H}}
+
+\newcommand{\Yes}{\texttt{Yes}}
+\newcommand{\No}{\texttt{No}}
+
+\begin{document}
+
+\begin{questions}
+
+\question[25] \textbf{(Linear Programming Duality)} The statement below is known as Farkas' Lemma.  This is a pre-cursor to the duality theory in general convex programming and suffices in the Linear Programming setting; we prove this in this question.
+
+\begin{theorem}[Farkas' Lemma]  For every matrix $A \in \reals^{m \times n}$ and any $b \in \reals^m$, either:
+
+\begin{enumerate}
+\item there exists an $x \in \reals^n$ satisfying:
+  \begin{equation}
+  \begin{aligned}
+  Ax &= b\\
+  x &\ge 0;
+  \end{aligned}
+  \end{equation}
+\item or, there is a $y \in \reals^m$, satisfying:
+  \begin{equation}
+  \begin{aligned}
+  y^T A &\le 0\\
+  y^T b &> 0;
+  \end{aligned}
+  \end{equation}
+\end{enumerate}
+\end{theorem}
+
+
+
+\begin{parts}
+\part[5] Show that if there is a $y$ satisfying condition $(2)$, then condition $(1)$ can \emph{not be} satisfied (by any $x \ge 0$).
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[15] Now, show that if $(1)$ is not satisfiable, then there is a $y$ saisfying $(2)$.   In the proof, you may (and probably should) use the Hyperplane-Seperation theorem stated after the questions.
+
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[5] Finally, prove that any \emph{feasible} linear program, where in addition to condition $(1)$, we minimize the \emph{objective function} $c^T x$, the dual LP also has the same optimum.  Note that we got around the corner cases by assuming that the linear program is feasible and we only need to prove this special case.
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\end{parts}
+
+
+\question[10] \textbf{(Taylor Series and Inequalities)}  Show that if $f: \reals \to \reals$ is an infinitely-differentiable function (i.e., all orders of derivatives $f^{(k)} = \frac{d^k f}{dx^k}$ exist and are continuous), then for any $a \in \reals$, and any positive integer $k$, there is a $\delta > 0$ such that, the function $g_k$:
+$$ g_k(x) = f(x) - \sum_{i=0}^{k} \frac{x^k}{k!} f^{(k)}(a),$$
+is either always $\ge 0$ or always $\le 0$ in the interval $[a, a+\delta]$.
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\end{questions}
+
+\appendix
+
+\section*{Hyperplane Seperation Theorem}
+
+A set $K \subseteq \reals^n$ is said to be closed if it contains all its limit points.  For example, $(0, 1)$ is not closed as the sequence $\curly{1/n \mid n \in \integers}$ tends to $0$ which is not included in the set.  On the other hand, $[0, 1]$ is closed.
+
+\begin{theorem}[Hyperplane Seperation Theorem]  For any closed convex set $K \in \reals^n$ and any point $x$ outside $K$, there is a hyperplane $H$ that seperates $K$ from $x$.
+\end{theorem}
+
+
+\end{document} 

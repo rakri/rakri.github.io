@@ -1,0 +1,291 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="
+  text/html; charset=us-ascii" />
+  <title>CS6841: IITM Approximation Algorithms, Jan-May 2018</title>
+<script src="ASCIIMathML.js" type="text/javascript">
+</script>
+
+<!--<style type="text/css" media="screen">
+body { background-color: #F4F4F4;
+   /* font-family: Georgia, "Times New Roman", Times, serif;
+   font-size: 80%; */ /* Resets 1em to 10px */ 
+   }
+.notes {color: #333333;}
+ul {color: #003380;}
+ol {color: #983514;}
+li {padding-top: 0.10em;}
+h3 {color: #444444;}
+</style>-->
+
+</head>
+
+<body onload="translate()">
+<h2> CS6841: Approximation Algorithms, Jan-May 2018</h2>
+<dl>
+<dd> <b>Lecturer</b>: <a href="http://www.cs.cmu.edu/~ravishan">Ravishankar Krishnaswamy</a><br>
+<dd> <b>TAs</b>:<br>
+<br>
+<dd><b>Location</b>: CS34, W 2:00-3:15; Th 3:25-5:30 
+</dl>
+
+<hr>
+<h3>Announcements</h3>
+
+<ul>
+<li> (13/1): The course evaluation will be based on roughly 4-5 homeworks, 1 end-sem, and 1 student presentation </li>
+</ul>
+<hr>
+
+<h3>Homeworks</h3>
+
+<ul>
+ <li><a href="hws/hw1.pdf">Homework 1</a> (<a href="hws/hw1.tex">source file</a> for typsetting answers)  (due 28/02/2018)</li>
+ <li><a href="hws/hw2.pdf">Homework 2</a> (<a href="hws/hw2.tex">source file</a> for typsetting answers)  (due 21/03/2018)</li>
+ <li><a href="hws/hw3.pdf">Homework 3</a> (<a href="hws/hw3.tex">source file</a> for typsetting answers)  (due 05/04/2018)</li>
+ <li><a href="hws/hw4.pdf">Homework 4</a> (<a href="hws/hw4.tex">source file</a> for typsetting answers)  (due 26/04/2018)</li>
+ <li><a href="hws/endsem.pdf">Endsem Takehome Exam</a> (<a href="hws/endsem-6841.zip">source files</a> for typsetting answers) (due 10/05/2018)</li>
+</ul>
+<hr>
+
+<h3>Completed Lectures, and Tentative Outline</h3>
+
+In the first part of the course, we plan to look at basic covering/packing problems such as vertex cover, set cover, and minimum congestion routing. From the technical side, we will cover various algorithmic techniques (greedy, local search, primal-dual, LP rounding) which have different quality of approximation guarantees depending on the type of input instances.
+In the second part, we will focus on resource allocation problems, such as max-min allocation, min-max allocation, and bin packing. Now the techniques will include designing PTASs, and rounding so-called configuration LPs, in addition to the ones described above.
+In the final part, we will follow the same template for graph partitioning problems such as min cut, max cut, multi-cut, and sparsest cut. The techniques now additionally include SDP rounding and metric embeddings.
+
+
+<ul style="list-style: none;">
+ <li><b>(17/1/2018) </b> Lecture 1 (RK). Course Introduction.
+ <i><ul>
+   <li>Introduced approximation algorithms and explained why we study them. </li>
+ </ul></i>
+</li>
+ <br>
+
+
+ <li><b>(25/1/2018) </b> Lecture 2 (RK). Intro to Probability Inequalities.
+ <i><ul>
+   <li>Went over basics of probability and concentration bounds, and looked at various applications of these such as balls and bins, etc.</li>
+     <li> Introduced Vertex Cover problem and studied simple 2-approximation.</li>
+ </ul></i>
+</li>
+<br>
+
+
+ <li><b>(01/2/2018) </b> Lecture 3 (RK). Introduction to Linear Programming.
+ <i><ul>
+<li>Went over basics of Linear Programming such as polytopes, basic feasible solutions, etc.</li>
+   <li>Formulated an LP for the weighted vertex cover problem and showed a rounding with 2-approximation.</li>
+ </ul></i>
+</li>
+<br>
+
+     <li><b>(07/2/2018) </b> Lecture 4 (RK). LP rounding for Set Cover.
+ <i><ul>
+<li>Introduced the Set Cover problem and showed the f-approximation and O(log n) approximation using LP rounding.</li>
+ </ul></i>
+</li>
+<br>
+
+     <li><b>(08/2/2018) </b> Lecture 5 (RK). Greedy Algorithms for Set Cover.
+ <i><ul>
+<li>Studied the performance of greedy algorithm for both the set cover and min-sum set cover problems.</li>
+     <li>Handwritten notes are available <a href="hws/set-cover.pdf">here</a>.</li>
+ </ul></i>
+</li>
+<br>
+
+     <li><b>(14/2/2018) </b> No Class. Institute Holiday.
+</li>
+<br>
+
+     <li><b>(15/2/2018) </b> Lecture 6 (RK). Primal-Dual Algorithms.
+ <i><ul>
+<li>Introduced the Dual of an LP and motivated Primal-Dual Algorithms.</li>
+ </ul></i>
+</li>
+<br>
+
+     <li><b>(21/2/2018) </b> Lecture 7 (RK). Primal-Dual Algorithms for Weighted Vertex Cover.
+ <i><ul>
+<li>Showed how to use the Primal-Dual framework for 2-approximation for weighted vertex cover.</li>
+ </ul></i>
+</li>
+<br>
+
+     <li><b>(22/2/2018) </b> Lecture 8 (RK). Primal-Dual Algorithms Steiner Forest.
+ <i><ul>
+<li>Showed how to use the Primal-Dual framework for 2-approximation for Steiner Forest.</li>
+<li>Along the way saw a 2-approximation for the Steiner Tree problem.</li>
+     <li>Handwritten notes for past three lectures are available <a href="hws/primal-dual.pdf">here</a>.</li>
+     </ul></i>
+</li>
+<br>
+
+     <li><b>(28/2/2018) </b> Lecture 8 (RK). Wrapped up Steiner Forest.
+ <i><ul>
+<li>Finished the proof of the Steiner Forest Primal-Dual algorithm.</li>
+ </ul></i>
+</li>
+<br>
+
+
+
+     <li><b>(1/3/2018) </b> Lecture 9 (RK). Local Search for k-Median.
+ <i><ul>
+<li>Introduced Clustering problems and studied a 5-approximation for k-Median using Local Search.</li>
+ </ul></i>
+</li>
+<br>
+
+         <li><b>(7/3/2018) </b> Lecture 10 (RK). Online Algorithms I.
+ <i><ul>
+     <li>Introduction to Online Algorithms, and the paging problem.</li>
+ </ul></i>
+</li>
+<br>
+
+             <li><b>(8/3/2018) </b> Lecture 11 (RK). Class canceled.
+ <i><ul>
+ </ul></i>
+</li>
+<br>
+
+                 <li><b>(14/3/2018) </b> Lecture 12 (RK). Online Algorithms II.
+ <i><ul>
+          <li>Studied the randomized 1-bit LRU (Marking Algorithm) for Paging.</li>
+ </ul></i>
+</li>
+<br>
+
+                 <li><b>(15/3/2018) </b> Lecture 13 (RK). Online Algorithms III.
+ <i><ul>
+          <li>Studied the waterfilling algorithm for (1-1/e) competitive online matching.</li>
+ </ul></i>
+</li>
+<br>
+
+                 <li><b>(21/3/2018) </b> Lecture 14 (RK). Online Algorithms IV. 
+ <i><ul>
+     <li>Introduced the online learning problem and studied the multiplicative-weights algorithm.</li>        
+     <li>Handwritten notes are available <a href="hws/online-learning.pdf">here</a>.</li>
+ </ul></i>
+</li>
+<br>
+
+                 <li><b>(22/3/2018) </b> Lecture 15 (RK). Machine Scheduling for Minimizing Makespan.
+ <i><ul>
+     <li>Saw the 2-approximation for Graham's list scheduling and introduced Dynamic Programming based approach for PTAS design.</li>
+     <li>Handwritten notes are available <a href="hws/machine-scheduling.pdf">here</a>.</li>
+    </ul></i>
+</li>
+<br>
+
+                 <li><b>(28/3/2018) </b> PTAS Design II (RK). 
+ <i><ul>
+     <li> Completed the PTAS for Makespan scheduling and saw PTAS for Knapsack.</li>
+ </ul></i>
+</li>
+<br>
+
+             <li><b>(4/4/2018) </b> Lecture 17 (RK). Intro to Stochastic Optimization.  
+ <i><ul>
+     <li> Studied a O(1)-approximation for Stochastic Knapsack problem.</li>
+ </ul></i>
+</li>
+<br>
+
+
+    
+                 <li><b>(5/4/2018) </b> Lecture 18 (RK). Semidefinite Programming.
+ <i><ul>
+     <li> Introduced SDPs and saw the rounding algorithms for Max-Cut and 3-coloring.</li>
+ </ul></i>
+</li>
+<br>
+
+                 <li><b>(11/4/2018) </b> Lecture 19 (RK). Intro to Metric Embeddings.
+ <i><ul>
+     <li> Defined metric embeddings, and stated Bourgain's embedding into l_1 and the Johnson-Lindenstrauss Lemma.</li>
+ </ul></i>
+</li>
+<br>
+
+                 <li><b>(12/4/2018) </b> Lecture 20 (RK). Metric Embeddings II. 
+ <i><ul>
+     <li> Proved Bourgains Theorem for embeddings into l_1 spaces. Defined the sparsest cut problem, and showed a O(log n) approximation using this theorem.</li>
+     <li>Handwritten notes for last two lectures are available <a href="hws/metric-embeddings.pdf">here</a>.</li>
+ </ul></i>
+</li>
+<br>
+
+                 <li><b>(18/4/2018) </b> Lecture 21 (RK). Hardness of Approximation I.
+ <i><ul>
+     <li> Recapped NP-completeness, proof systems, and introduced the PCP class.</li>
+     <li>Handwritten notes are available <a href="hws/hardness-intro.pdf">here</a>.</li>
+</ul></i>
+</li>
+<br>
+
+                 <li><b>(19/4/2018) </b> Lecture 22 (RK). Hardness of Approximation II.
+ <i><ul>
+     <li> Stated the PCP theorem, and saw implications to hardness of approximation. Defined Label Cover problem and applied it for max-coverage hardness.</li>
+ </ul></i>
+</li>
+<br>
+
+                 <li><b>(25/4/2018) </b> Student Presentations. 
+ <i><ul>
+ </ul></i>
+</li>
+<br>
+
+
+                     <li><b>(26/4/2018) </b> Student Presentations. 
+ <i><ul>
+ </ul></i>
+</li>
+<br>
+
+    
+    
+<br>
+
+
+
+</ul>
+
+
+
+
+<h4><u>Student Presentations</u></h4>
+
+This involves reading classical papers. Students are expected to form groups of two, choose a paper, and present (a) the goal of the paper, (b) the underlying problem, (c) the solution provided in the paper, and (d) complete proofs or concise proof ideas. 
+The presentations are to be 20 minutes long.
+
+
+
+<ul style="list-style: none;">
+
+<li> <a href="http://theory.epfl.ch/moranfe/Publications/FOCS2012.pdf">A Tight Linear Time (1/2)-Approximation for Unconstrained Submodular Maximization</a>
+<li><a href="http://www.cs.cornell.edu/home/kleinber/kdd03-inf.pdf">Maximizing the spread of influence through a social network</a>
+<li><a href="http://web.cs.elte.hu/~lovasz/mssc.pdf">Approximating Min-Sum Set Cover</a>
+<li><a href="http://www.cs.ox.ac.uk/people/elias.koutsoupias/Personal/Papers/paper-kou09.pdf"> The k-Server Problem</a>
+<li><a href="https://arxiv.org/pdf/1503.08796.pdf"> Bin Packing Additive Approximation Algorithm</a>
+<li><a href="https://pdfs.semanticscholar.org/d7e5/19fd5ad48039dea0f7d95a022e65c11a301f.pdf"> Iterative Rounding for Network Design </a>
+<li><a href="https://www.cc.gatech.edu/~mihail/D.7520reading/7520stochknap.pdf">Stochastic Knapsack Problem </a>
+
+
+</ul>
+
+<hr>
+
+<i>Thanks to Anupam Gupta for webpage design, and scribe template.</i>
+
+</body>
+</html>

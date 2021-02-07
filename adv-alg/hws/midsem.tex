@@ -1,0 +1,158 @@
+\documentclass[solution,addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newenvironment{Solution}{\begin{EnvFullwidth}\begin{solution}}{\end{solution}\end{EnvFullwidth}}
+
+\printanswers
+%\unframedsolutions
+\pagestyle{headandfoot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% INSTRUCTIONS %%%%%%%%%%%%%%%%%%%%%
+% * Fill in your name and roll number below
+
+% * Answer in place (after each question)
+
+% * Use \begin{solution} and \end{solution} to typeset
+%   your answers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fill in the details below
+\def\studentName{\textbf{TODO: Name}}
+\def\studentRoll{\textbf{TODO: Roll}}
+
+\firstpageheader{CS 6841 - Mid-Semester}{}{\studentName, \studentRoll}
+\firstpageheadrule
+
+\newcommand{\brac}[1]{\left[ #1 \right]}
+\newcommand{\curly}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\card}[1]{\left\lvert #1 \right\rvert}
+\def\abs{\card}
+
+\newcommand{\prob}{\operatorname{\mathbf{Pr}}}
+\newcommand{\ex}{\operatorname{\mathbf{E}}}
+\newcommand{\variance}{\operatorname{Var}}
+\newcommand{\from}{\leftarrow}
+
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\reals}{\mathbb{R}}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\hashFamily}{\mathcal{H}}
+
+\newcommand{\Yes}{\texttt{Yes}}
+\newcommand{\No}{\texttt{No}}
+
+\newcommand{\iprod}[1]{\left\langle #1 \right\rangle}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+
+\begin{document}
+
+\begin{questions}
+
+\question[10] \textbf{(Who wins the election? Opinion Poll Strategy)} Imagine there are only two parties standing in the national election, and you have access to sampling and calling up uniformly random people from the electorate to find out who they're going to vote for. If the total population is $N$ and an unknown $\frac14 \leq p \leq \frac34$ fraction prefer BJP and $(1-p)$ prefer Congress, what's the maximum number of people you need to sample to estimate $p$ upto an additive error of $\epsilon$? Give the best possible answer up to constant factors, i.e., don't try to optimize the constants.
+
+\question[10]  \textbf{(More JL, More High-Dimensional Geometry)} There can only be $d$ pairwise orthogonal vectors in $\reals^d$ (as the span of these vectors is of dimension at least $d$).  On the other hand, as we saw in HW2, for any $\epsilon > 0$, there can be exponentially (in the dimension $d$) many unit vectors which are nearly orthogonal in $d$ dimensions, i.e., have absolute value of their pairwise inner products at most $\epsilon$.  Show that this is a consequence of the Johnson-Lindenstrauss Lemma.
+
+\begin{theorem}  For any $\epsilon > 0$, and any integer $d$, there exists a collection of vectors $v_1, \ldots, v_t \in \reals^d$, with $t = \exp(\Omega{d})$ such that:
+  \[ \abs{\iprod{v_i, v_j}} \le \epsilon \qquad \forall \text{ distinct } i,j \in [t]. \]
+\end{theorem}
+
+\begin{solution}
+\begin{proof}
+  $ 1 + 1 = 2 $
+\end{proof}
+\end{solution}
+
+
+\question[10] \textbf{(LP-Based Approach for P=NP?)} We will now attempt to show that a well-known NP-hard problem, the hamilton path problem is solvable using Linear Programming. Your goal is to find out if we are making any errors in our thought process. Indeed, our high level approach is to formulate the Hamilton Path problem as a flow problem, and solve the flow problem integrally.
+
+\begin{parts}
+\part[0] In class, we saw the flow LP polytope. Here is a similar LP formulation for the \emph{minimum cost flow} problem. That is, we are given a directed graph $D = (V,A)$, each arc $a$ has two integer capacities $\ell_a$ and $u_a$ with $\ell_a \leq u_a$, and also a non-negative cost $c_a$. There is also a source vertex $s$ and destination vertex $t$. The goal is to find the minimum cost way to send $1$ unit flow from $s$ to $t$ in $G$ such that the flow respects the upper and lower capacities on the different arcs.
+
+  \begin{solution}
+\begin{alignat*}{2}
+\min  & \sum_{a} c_a f_a \\
+\text{s.t}  & \sum_{a \in \delta_{\text{in}} (v)} f_a   =   \sum_{a \in \delta_{\text{out}} (v)} f_a & \qquad  \forall v \in V \setminus \{s,t\} \\
+  & \sum_{a \in \delta_{\text{out}} (s)} f_a  -  \sum_{a \in \delta_{\text{in}} (s)} f_a  = 1 \qquad \\
+  & \sum_{a \in \delta_{\text{in}} (t)} f_a   -  \sum_{a \in \delta_{\text{out}} (t)} f_a  = 1 \qquad \\
+  & \ell_a \leq f_a \leq u_a & \qquad \forall a \in A
+\end{alignat*}
+  \end{solution}
+
+
+\part[5] In general, the flow polytope above is integral if the lower and upper bounds are integral. That is, an optimal solution of the LP assigns flow values which are integer values as long as the capacities are all integer values also. Now, consider an undirected graph $G = (V,E)$ where each edge $e$ has a cost $1$, and a source vertex $s$ and sink vertex $t$. Suppose each edge has lower and upper bounds on the flow as $0$ and $1$, and additionally each \emph{vertex} now has a lower bound of flow as $1$ and upper bound also as $1$. Suppose the goal is to find the minimum cost flow in this problem. Show how to reduce this problem to one introduced in the previous part.
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[5] Finally, we attempt to solve the following Hamilton path problem using the previous part: In this problem, given a graph $G$ and $s$ and $t$, the goal is to determine if there is an $s$--$t$ path that visits each vertex exactly once. Suppose given this instance, we solve the flow problem defined in the previous part. Since our capacity bounds are integral, the resulting flow LP is also integral. Will this recover the Hamilton path? Explain what could go wrong if anything goes wrong.
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\end{parts}
+
+\question[15] \textbf{(Ambulance Migration)} In this question, you will design an algorithm for the following problem: The input consists of $n$ locations, along  with a metric space (represented by pairwise distances $d(i,j)$ between point $i$ and point $j$  which satisfy $d(i,j) + d(j,k) \geq d(i,k)$). Initially $k$ ambulances are all in a central hospital at location $i_0$. We are also given a sequence of locations $i_1$, $i_2$, \ldots, $i_T$ which need to be serviced by these ambulances on successive days $1, 2, \ldots, T$. Your goal is to find out how to move ambulances to these locations so as to minimize the total movement cost. For example, if there are only two locations $i_1$ and $i_2$ (i.e., $T = 2$), there can only be two possible strateges: one strategy is to move one ambulance to location $i_1$ on day $1$ and then the same ambulance to $i_2$ on day two. The cost here is $d(i_0, i_1) + d(i_1, i_2)$. Alternately, another strategy is to move one ambulance to $i_1$ on day $1$, and move the second ambulance to $i_2$ on day $2$ at a total cost of $d(i_0,i_1) + d(i_0,i_2)$. Can you design an algorithm with running time polynomial in $n$ and $T$ to compute the minimum cost movement sequence. Remember that the requests are ordered, that is, we can't service $i_2$ before $i_1$.
+
+
+\question[15] \textbf{(Datastructure Design)}  Suppose we have $n$ points on the plane, $x_1, \ldots, x_n \in \reals^k$ and wish to construct an algorithm that answers queries, given $y \in \reals^k$, for maximizing and minimizing the inner product $\iprod{x_i, y}, i \in [n]$.  In other words, given $y$, the algorithm should output $i$ and $j$ that (respectively) maximize and minimize the inner product with $y$.
+
+\begin{parts}
+\part[10]  Show that when $k = 2$ (that is, the points are on a plane), we can design algorithm that answer the queries in time $O(\log n)$.
+
+\part[5]  How do you extend the data-structure designed above for larger values of $k$.  Assume $k$ is a parameter much smaller than $n$ and thus, we wish to minimize the running-time in terms of $n$ first, and then $k$.
+\end{parts}
+
+\end{questions}
+
+\eject
+\appendix
+\section{Lecture Materials}
+
+\subsection{Tail Inequalities}
+
+Often in our analysis, we model an interesting quantitity as a (real) random variable $X$ and want to bound the tail of X (that is probability of $X$ taking large values).  The \emph{Markov's inequality} states that when $X \ge 0$:
+
+\[ \prob\brac{X \ge t \ex\brac{X}} \le 1/t. \]
+
+Often, the variance,
+
+\[ \variance\brac{X} := \ex\brac{(X - \ex{X})^2}, \]
+
+is known to be small.  Applying the Markov's inequality to the square-deviation: $(X - \ex[X])^2$, a non-zero random variable for any $X$, we have the \emph{Chebyshev's Inequality}:
+
+\[ \prob\brac{\abs{X - \ex\brac{X}} \ge t \variance\brac{X}  }  \le 1/t^2 \]
+
+\subsection{Johnson-Lindenstrauss Lemma}
+
+The JL Lemma is a hallmark of dimension-reduction techniques.
+
+\begin{lemma}
+  For every $\epsilon > 0$, and every collection of $m$ points, $x_1, \ldots, x_m \in \reals^n$, there is a mapping of the points: $(x_j \to y_j)$, with $y_j \in \reals^k$ for any $k \ge {8 \log(m)}/{\epsilon^2}$, where:
+
+  \[ (1 - \epsilon) \cdot \norm{x_i - x_j}_2 \le \norm{y_i - y_j}_2 \le (1 + \epsilon) \cdot \norm{x_i - x_j}_2; \qquad \forall i, j \in [m].  \]
+\end{lemma}
+
+%   and every integer $k \ge \frac{8\log(m)}{\epsilon^2}$,
+% Given $0 < \epsilon < 1$, a set X of $m$ points in RN, and a number n > 8 ln(m) / ε 2, there is a linear map ƒ : RN → Rn such that
+
+% (1-\varepsilon)\|u-v\|^2 \leq \|f(u) - f(v)\|^2 \leq (1+\varepsilon)\|u-v\|^2
+% for all u, v ∈ X.
+
+% One proof of the lem
+
+\end{document}

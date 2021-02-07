@@ -1,0 +1,173 @@
+\documentclass[solution,addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newenvironment{Solution}{\begin{EnvFullwidth}\begin{solution}}{\end{solution}\end{EnvFullwidth}}
+
+\printanswers
+%\unframedsolutions
+\pagestyle{headandfoot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% INSTRUCTIONS %%%%%%%%%%%%%%%%%%%%%
+% * Fill in your name and roll number below
+
+% * Answer in place (after each question)
+
+% * Use \begin{solution} and \end{solution} to typeset
+%   your answers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fill in the details below
+\def\studentName{\textbf{TODO: Name}}
+\def\studentRoll{\textbf{TODO: Roll}}
+
+\firstpageheader{CS 6841 - Assignment 2}{}{\studentName, \studentRoll}
+\firstpageheadrule
+
+\newcommand{\brac}[1]{\left[ #1 \right]}
+\newcommand{\curly}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\card}[1]{\left\lvert #1 \right\rvert}
+
+\newcommand{\prob}{\operatorname{\mathbf{Pr}}}
+\newcommand{\ex}{\operatorname{\mathbf{E}}}
+\newcommand{\from}{\leftarrow}
+
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\reals}{\mathbb{R}}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\hashFamily}{\mathcal{H}}
+
+\newcommand{\Yes}{\texttt{Yes}}
+\newcommand{\No}{\texttt{No}}
+
+\begin{document}
+
+\begin{questions}
+
+\question[20] \textbf{(Weighted Vertex Cover with Penalties)}  In the  problem we did in class, we are given a graph $G = (V,E)$ with non-negative weights on vertices. The goal is to find a minimum cost vertex cover to cover all edges. Here we consider a relaxed version where each edge has a penalty $\pi_e \geq 0$ if the set of vertices picked does not cover it. The goal is to minimize the total cost of vertices picked plus the total penalty of edges not covered. 
+\begin{parts}
+\part[5] Write down a natural LP relaxation for the problem.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[5] Write down the dual of this LP relaxation.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+  
+ 
+\part[10] Devise a primal-dual $3$-approximation for this problem.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\end{parts}
+
+
+\question[40] \textbf{(Matching on Metrics)}  In the classical perfect matching problem, we are given a graph $G = (V,E)$ on $2n$  vertices with non-negative weights on edges. The goal is to find a minimum cost perfect matching on these $2n$ vertices. 
+\begin{parts}
+\part[3] What is the complexity of this problem, i.e., is it in P? If so, what's the best known running time of the algorithm? You can search online to find out more.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[3] How good is the natural greedy algorithm for this problem? That is, pick the cheapest edge, pair those vertices, and repeat on the remaining edges. How bad is the approximation performance of this algorithm?
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[10] Now suppose the weights satisfy the metric property, i.e., $w(u,v) = w(v,u)$ and $w(u,v) + w(v,w) \geq w(u,w)$ for all $u,v,w$. Then is the greedy algorithm any good? Can you come up with a bad lower bound? (Hint: think of a recursive construction on a line metric).
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[4] Now we construct a primal-dual algorithm on metric spaces. Consider an LP like the Steiner forest LP we discussed in class, where we want to minimize $\sum_{uv} w(u,v) x_{uv}$ and the constraints are $\sum_{e \in \delta(S)} x_{e} \geq 1$ for all $S$ of \emph{odd cardinality}.  Show that the optimal cost of this LP is at most the optimal matching cost for the problem.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[7] Write down the dual of the above LP. Then devise a primal-dual algorithm like we did in class with all violated components raising their dual variables, and also with the reverse delete step.   \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+ 
+\part[8] Prove that the primal-dual framework yields a primal-feasible solution (after reverse delete) with cost at most twice the dual solution's value. 
+\begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+ 
+
+\part[5] Are we done? Show that we can convert any primal feasible solution to a perfect matching of no greater cost. 
+\begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\end{parts}
+
+
+\question[20] \textbf{(Better Local Search for $k$-Median)}  We will get a more detailed understanding of the local search technique for the $k$-median problem. More precisely, instead of the algorithm discussed in class, imagine if we could do up to $t$ swaps at once, in any local move, and stop when all such neighborhood solutions are non-improving. How much better is this algorithm in its performance? 
+
+\begin{parts}
+\part[3] 	Construct the $\eta$ graph just like we did for the normal local search, and now partition the vertices in $S$ into the following kinds: (i) $1 \leq | \eta^{-1} (i) | \leq t$, (ii) $| \eta^{-1} (i) | > t$, and (iii) $| \eta^{-1} (i) | = 0$. If there are $k_1$ centers in $S^*$ which map to the first kind of vertices above, then how large can the set of type (iii) be above in terms of $k,k_1$ and $t$?
+\begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[7] Devise a set of valid test swaps so that each center in $S^*$ is used exactly $t$ times, and each center in $S$ is used no more than $t+1$ times, and moreover, no center of type (ii) is involved in any test swap. 
+\begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+\part[10] Formally prove the performance of the algorithm in terms of OPT using these inequalities from the test swaps. Try to get a $3 + O(1/t)$ approximation ratio. 
+\begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+\end{parts}
+
+
+
+
+
+\question[0] {\bf Difficulty Level.} How difficult was this homework? How much time would you have spent on these questions?
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+
+\end{questions}
+\end{document} 

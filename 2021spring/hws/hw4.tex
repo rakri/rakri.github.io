@@ -1,0 +1,131 @@
+\documentclass[solution,addpoints,12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newenvironment{Solution}{\begin{EnvFullwidth}\begin{solution}}{\end{solution}\end{EnvFullwidth}}
+
+\printanswers
+%\unframedsolutions
+\pagestyle{headandfoot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% INSTRUCTIONS %%%%%%%%%%%%%%%%%%%%%
+% * Fill in your name and roll number below
+
+% * Answer in place (after each question)
+
+% * Use \begin{solution} and \end{solution} to typeset
+%   your answers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fill in the details below
+\def\studentName{\textbf{TODO: Name}}
+\def\studentRoll{\textbf{TODO: Roll}}
+
+\firstpageheader{CS 6841 - Assignment 4}{}{\studentName, \studentRoll}
+\firstpageheadrule
+
+
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+
+\newcommand{\brac}[1]{\left[ #1 \right]}
+\newcommand{\curly}[1]{\left\{ #1 \right\}}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\card}[1]{\left\lvert #1 \right\rvert}
+
+\newcommand{\prob}{\operatorname{\mathbf{Pr}}}
+\newcommand{\ex}{\operatorname{\mathbf{E}}}
+\newcommand{\from}{\leftarrow}
+
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\reals}{\mathbb{R}}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\hashFamily}{\mathcal{H}}
+
+\newcommand{\Yes}{\texttt{Yes}}
+\newcommand{\No}{\texttt{No}}
+
+\begin{document}
+
+\begin{questions}
+
+\question[25] \textbf{Familiarity with Euclidean Norms.} 
+In the following exercise, you will familiarize yourself with Euclidean metrics.
+For any n points $X = \{{\bf x}_1, {\bf x}_2, \ldots, {\bf x}_n\}$ where each ${\bf x}_i \in \mathbb{R}^d$, define $d({\bf x}_i, {\bf x}_j) = \norm{ {\bf x}_i - {\bf x}_j}_p$. Here, $\norm{{\bf x}}_p = \left( \sum_{\ell = 1}^{d} (x_l)^p \right)^{1/p}$ for any ${\bf x} = (x_1, x_2, \ldots, x_d)^\intercal$ is any vector in $\mathbb{R}^d$ and $p \geq 1$.
+\begin{parts}
+\part[5] Show that $(X,d)$ is a metric space for any $p = 1$ and $p=2$. In fact, it is a metric space for all $p \geq 1$, but you don't need to prove this.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+  
+\part[5] Consider the $4$-point metric space formed by $d(1,2) = 1, d(1,3) = 2, d(1,4) = 1, d(2,3) = 1, d(2,4) = 2, d(3,4) = 1$. Of course, $d(i,i) = 0$ and $d(i,j) = d(j,i)$ for all $i,j \in \{1,2,3,4\}$ hold. Does this embed into $\ell_1$ metrics? If so, how many dimensions do you need in your embedding?
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[10] Consider the same $4$-point metric space as above. Does this embed into $\ell_2$ metrics? If so, how many dimensions do you need in your embedding? Conclude that $\ell_1$ metrics do not embed isometrically into $\ell_2$ metrics.
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+  
+\part[5] For any vector $\bf{x}$, show that $\norm{{\bf x}}_2 \leq \norm{{\bf x}}_1 \leq \sqrt {n} \norm{{\bf x}}_2$. Using this, show that any finite $\ell_1$ metric trivially embeds into an $\ell_2$ metric with distortion at most $\sqrt{n}$.
+\end{parts}
+
+\question[20] \textbf{Finding the Best Embeddings.} 
+Here, we see algorithmic problems involving embeddings. Indeed, given a metric $(X,d)$, we want to see the best possible embedding into $\ell_2$ metrics with minimum distortion. Show that this can be formulated as an SDP.
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+
+\question[30] \textbf{Cut Metrics and $\ell_1$ metrics.}
+Recall that given a graph $G = (V,E)$, a cut metric $\delta_S( \cdot, \cdot)$ is defined for $S \subseteq V$, and is of the form $\delta_S(u,v) = 1$ if and only if $S \cap \{u,v\} = 1$, and $\delta_S(u,v) = 0$ otherwise. Also recall that an $\ell_1$ metric associates a vector $f(u) \in \mathbb{R}^d$ for all $u \in V$. 
+
+\begin{parts}
+\part[10] Suppose the $\ell_1$ metric is in $1$ dimension, i.e., it is a line. Then show that you can obtain weights $w_S \geq 0$ for all $S \subseteq V$ such that, for all $u \in V, v \in V$, the distance $\norm{ f(u) - f(v)}_1$ can be expressed as $\sum_{S \subseteq V} w_S \delta_S (u,v)$. (Hint: consider the line embedding and assign non-zero weights only to the subsets which arise as prefixes on this line.)
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\part[5] Extend the above proof for an $\ell_1$ embedding $f$ in dimension $d$ (Hint: just separately do this over all the co-ordinates).
+
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+ 
+ \part[15] Using the above idea, show that if we have an $\ell_1$ metric $d(\cdot, \cdot)$ which has sparsity\footnote{Here the denominator sums over all pairs $(u,v)$ without double counting any pair. In other words, we are summing over all the edges of the complete graph $K_n$.} $\frac{\sum_{(u,v) \in E} d(u,v)}{ \sum_{u \in V, v \in V} d(u,v)} = \lambda$, then we can actually find a cut $(S, \bar{S})$ such that $\frac{|E(S,\bar{S})|}{|S| |\bar{S}|} \leq \lambda$. This completes the $O(\log n)$ approximation to sparsest cut using metric embeddings discussed in class.
+ \end{parts}
+
+\question[0] {\bf Difficulty Level.} How difficult was this homework? How much time would you have spent on these questions?
+  \begin{solution}
+  \begin{proof}
+  $1 + 1 = 2$.
+  \end{proof}
+  \end{solution}
+
+
+\end{questions}
+\end{document} 

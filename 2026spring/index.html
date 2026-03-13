@@ -34,41 +34,53 @@
 
 <hr>
 
-<h3>Tentative Topics</h3>
+<h3>Topics Covered (Week-wise)</h3>
 
-<p><b>Algorithmic Design Techniques:</b></p>
+<h4><u>Complexity Theory (Week 1)</u></h4>
 <ul>
-<li>Dynamic Programming</li>
-<li>Greedy Algorithms</li>
-<li>Divide and Conquer</li>
+<li><b>P vs NP, NP-Hardness, NP-Completeness.</b> Formal definitions of complexity classes and the relationships between them.</li>
+<li><b>Cook-Levin Theorem.</b> The foundational result showing that SAT is NP-Complete.</li>
+<li><b>Reduction of MIS to Classroom Scheduling.</b> Demonstrating hardness of scheduling via Maximum Independent Set.</li>
+<li><b>Reduction of 3SAT to k-Clique.</b> A classic polynomial-time reduction between NP-Complete problems.</li>
 </ul>
 
-<p><b>Optimization:</b></p>
+<h4><u>Divide and Conquer (Weeks 2&ndash;3)</u></h4>
 <ul>
-<li>Gradient Descent and Variants</li>
+<li><b>Merge Sort.</b> The canonical divide-and-conquer sorting algorithm running in O(n log n) time.</li>
+<li><b>Linear Time Median Finding.</b> Deterministic selection using the median-of-medians strategy.</li>
+<li><b>Nearest Pair Problem in 2D.</b> Finding the closest pair of points in the plane in O(n log n) time.</li>
+<li><b>Karatsuba Multiplication.</b> Sub-quadratic integer multiplication via clever recursive decomposition.</li>
+<li><b>Strassen's Algorithm.</b> Matrix multiplication in sub-cubic time using divide and conquer.</li>
+<li><b>Discrete FFT.</b> The Fast Fourier Transform for efficient DFT computation using the recursive nature of the exponential series.</li>
 </ul>
 
-<p><b>Algorithms for Big Data:</b></p>
+<h4><u>Dynamic Programming (Weeks 4&ndash;5)</u></h4>
 <ul>
-<li>Sketching Algorithms</li>
-<li>Streaming Algorithms</li>
+<li><b>Fibonacci Numbers.</b> Illustrating memoization and bottom-up computation on a simple recurrence.</li>
+<li><b>Longest Common Subsequence.</b> Classic DP on two sequences with applications in diff and bioinformatics.</li>
+<li><b>Matrix Chain Multiplication.</b> Optimal parenthesization to minimize matrix chain multiplications.</li>
+<li><b>Single Sink Shortest Path on DAG.</b> Computing shortest paths to a target in a DAG using dynamic programming on graphs.</li>
+<li><b>Bellman-Ford Algorithm.</b> Shortest paths in graphs with negative edge weights via iterative relaxation</li>
+<li><b>Markov Decision Process.</b> Optimal policy computation using value iteration and the Bellman equation, following on from previous lecture (RL is basically DP++)</li>
+<li><b>Backpropagation.</b> Efficient gradient computation in neural networks as a DP over the computation graph.</li>
 </ul>
 
-<p><b>Randomized Algorithms:</b></p>
+<h4><u>Greedy Algorithms (Weeks 6&ndash;7)</u></h4>
 <ul>
-<li>Balls and Bins</li>
-<li>Load Balancing</li>
+<li><b>Interval Scheduling.</b> Maximizing the number of non-overlapping intervals by greedy earliest finish time.</li>
+<li><b>Minimum Spanning Tree (Kruskal's).</b> Building an MST by greedily adding lightest edges using Union-Find.</li>
+<li><b>Max k-Coverage.</b> A greedy approximation algorithm for selecting k sets to maximize coverage.</li>
+<li><b>Nearest Neighbour Approximation in n-Dimensions.</b> Greedy heuristics for proximity problems in high-dimensional spaces.</li>
+<li><b>Huffman Coding.</b> Constructing optimal prefix-free codes via a greedy bottom-up tree construction.</li>
 </ul>
 
-<p><b>Machine Learning Foundations:</b></p>
+<h4><u>Tentative Topics (Weeks 8&ndash;14)</u></h4>
 <ul>
-<li>Clustering Algorithms</li>
-</ul>
-
-<p><b>High Dimensional Data:</b></p>
-<ul>
-<li>High Dimensional Geometry</li>
-<li>Locality Sensitive Hashing (LSH)</li>
+<li><b>Concentration Bounds and Simple Randomized Algorithms.</b> Markov, Chebyshev, and Chernoff bounds applied to the analysis of randomized algorithms.</li>
+<li><b>Sketching Algorithms (Dimensionality Reduction).</b> Compact data summaries for approximate computation in sublinear space.</li>
+<li><b>Explore vs Exploit Tradeoff.</b> Multi-armed bandits and strategies for balancing exploration and exploitation.</li>
+<li><b>Monte Carlo Sampling.</b> Randomized sampling methods for estimation and simulation of complex distributions.</li>
+<li><b>LSH for ANNS.</b> Locality Sensitive Hashing for fast Approximate Nearest Neighbour Search in high dimensions.</li>
 </ul>
 
 <hr>
